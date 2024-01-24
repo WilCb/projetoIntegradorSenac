@@ -1,0 +1,70 @@
+.formulario {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+}
+.formulario .barra__progresso img {
+  width: 100%;
+}
+.formulario .titulo__form {
+  text-align: center;
+  margin-top: 40px;
+}
+.formulario .container__form {
+  align-self: center;
+  background-color: #EAEAEA;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 40px 20px;
+  width: 434px;
+}
+.formulario .container__form .titulo__categoria {
+  font-weight: 600;
+}
+.formulario .container__form .caixa__form, .formulario .container__form .caixa__estados .uf,
+.formulario .container__form .caixa__estados .pais, .formulario .container__form .cpf,
+.formulario .container__form .rg {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.formulario .container__form .caixa__form .input__padrao, .formulario .container__form .caixa__estados .uf .input__padrao,
+.formulario .container__form .caixa__estados .pais .input__padrao, .formulario .container__form .cpf .input__padrao,
+.formulario .container__form .rg .input__padrao {
+  border: none;
+  border-radius: 20px;
+  padding: 15px;
+  outline-color: #B1F5FA;
+}
+.formulario .container__form .caixa__identidade {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+.formulario .container__form .caixa__sexo {
+  background: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.formulario .container__form .caixa__estados {
+  justify-content: space-between;
+  display: flex;
+  gap: 10px;
+}
+.formulario .container__form .caixa__estados .uf,
+.formulario .container__form .caixa__estados .pais {
+  width: 100%;
+}
+.formulario .container__form .btn {
+  margin: 20px 0;
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 10px 40px;
+}
+.formulario .container__form .btn:hover {
+  background-color: #B1F5FA;
+}/*# sourceMappingURL=formulario.css.map */

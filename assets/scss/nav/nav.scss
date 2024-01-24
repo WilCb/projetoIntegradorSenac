@@ -1,0 +1,38 @@
+@use '../variaveis/variaveis.scss';
+
+.container__nav {
+    align-items: center;
+    background-color: #EAEAEA;
+    gap: 60px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    .img {
+        width: 260px;
+        height: 60px;
+        background-color: blue;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        a {
+            button {
+                background-color: #FFFFFF;
+                width: 280px;
+                padding: 20px 0;
+                border-radius: 20px;
+                border: none;
+                cursor: pointer;
+                &:hover {
+                    background: variaveis.$cor-hover;
+                }
+            }
+
+        }
+    }
+}

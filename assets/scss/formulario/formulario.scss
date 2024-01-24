@@ -1,0 +1,87 @@
+@use '../variaveis/variaveis.scss' as v;
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+    .barra__progresso {
+        img {
+            width: 100%;
+        }
+    }
+    .titulo__form {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .container__form {
+        align-self: center;
+        background-color: #EAEAEA;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 40px 20px;
+        width: 434px;
+
+        .titulo__categoria {
+            font-weight: 600;
+        }
+
+        .caixa__form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .input__padrao {
+                border: none;
+                border-radius: 20px;
+                padding: 15px;
+                outline-color: v.$cor-hover;
+            }
+        }
+
+        .caixa__identidade {
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
+        .cpf,
+        .rg {
+            @extend .caixa__form;
+        }
+
+        .caixa__sexo {
+            background: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .caixa__estados {
+            justify-content: space-between;
+            display: flex;
+            gap: 10px;
+
+            .uf,
+            .pais {
+                @extend .caixa__form;
+                width: 100%;
+            }
+
+        }
+
+        .btn {
+            margin: 20px 0;
+            background-color: #FFFFFF;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            padding: 10px 40px;
+
+            &:hover {
+                background-color: v.$cor-hover;
+            }
+        }
+    }
+}

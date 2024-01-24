@@ -1,0 +1,29 @@
+@use './reset/reset.scss';
+@use './geral/geral.scss';
+@use './nav/nav.scss';
+@use './formulario/formulario.css';
+
+/* Header */
+.main {
+    background-color: #6E97A4;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.container__header {
+    background-color: #EAEAEA;
+    display: flex;
+    padding: 20px;
+    height: 70px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.icones {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+
