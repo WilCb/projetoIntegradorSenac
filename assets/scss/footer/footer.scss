@@ -1,0 +1,9 @@
+@use '../variaveis/variaveis.scss' as v;
+
+.container__footer {
+    background-color: v.$cor-quinternaria;
+    padding: 40px 0;
+    p {
+        text-align: center;
+    }
+}

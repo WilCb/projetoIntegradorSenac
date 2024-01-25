@@ -1,0 +1,21 @@
+@use '../variaveis/variaveis.scss' as v;
+
+.container__header {
+    background-color: v.$cor-terciaria;
+    display: flex;
+    padding: 20px;
+    height: 70px;
+    align-items: center;
+    justify-content: space-between;
+    .titulo {
+        width: 100%;
+        h1 {
+            text-align: center;
+        }
+    }
+    .icones {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+}

@@ -12,7 +12,8 @@
 }
 .formulario .container__form {
   align-self: center;
-  background-color: #EAEAEA;
+  background-color: #948F87;
+  box-shadow: 20px 20px 20px #BEAC95;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -23,24 +24,44 @@
   font-weight: 600;
 }
 .formulario .container__form .caixa__form, .formulario .container__form .caixa__estados .uf,
-.formulario .container__form .caixa__estados .pais, .formulario .container__form .cpf,
+.formulario .container__form .caixa__estados .pais, .formulario .container__form .logradouro,
+.formulario .container__form .numero, .formulario .container__form .cpf,
 .formulario .container__form .rg {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 .formulario .container__form .caixa__form .input__padrao, .formulario .container__form .caixa__estados .uf .input__padrao,
-.formulario .container__form .caixa__estados .pais .input__padrao, .formulario .container__form .cpf .input__padrao,
+.formulario .container__form .caixa__estados .pais .input__padrao, .formulario .container__form .logradouro .input__padrao,
+.formulario .container__form .numero .input__padrao, .formulario .container__form .cpf .input__padrao,
 .formulario .container__form .rg .input__padrao {
   border: none;
   border-radius: 20px;
   padding: 15px;
-  outline-color: #B1F5FA;
+  outline-color: #EDCEA7;
 }
-.formulario .container__form .caixa__identidade {
+.formulario .container__form .caixa__form label::before, .formulario .container__form .caixa__estados .uf label::before,
+.formulario .container__form .caixa__estados .pais label::before, .formulario .container__form .logradouro label::before,
+.formulario .container__form .numero label::before, .formulario .container__form .cpf label::before,
+.formulario .container__form .rg label::before {
+  content: "*";
+}
+.formulario .container__form .caixa__form .nao__obrigatorio::before, .formulario .container__form .caixa__estados .uf .nao__obrigatorio::before,
+.formulario .container__form .caixa__estados .pais .nao__obrigatorio::before, .formulario .container__form .logradouro .nao__obrigatorio::before,
+.formulario .container__form .numero .nao__obrigatorio::before, .formulario .container__form .cpf .nao__obrigatorio::before,
+.formulario .container__form .rg .nao__obrigatorio::before {
+  content: "";
+}
+.formulario .container__form .caixa__dupla {
   display: flex;
   gap: 10px;
   justify-content: space-between;
+}
+.formulario .container__form .logradouro {
+  width: 80%;
+}
+.formulario .container__form .numero {
+  width: 20%;
 }
 .formulario .container__form .caixa__sexo {
   background: #FFFFFF;
@@ -59,12 +80,12 @@
 }
 .formulario .container__form .btn {
   margin: 20px 0;
-  background-color: #FFFFFF;
+  background-color: #BEAC95;
   border: none;
   border-radius: 20px;
   cursor: pointer;
   padding: 10px 40px;
 }
 .formulario .container__form .btn:hover {
-  background-color: #B1F5FA;
+  background-color: #EDCEA7;
 }/*# sourceMappingURL=formulario.css.map */

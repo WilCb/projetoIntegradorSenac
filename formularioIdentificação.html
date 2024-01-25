@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela cadastro</title>
+    <link rel="stylesheet" href="/assets/scss/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section class="geral">
+        <div class="container__nav">
+            <div class="img"></div>
+            <nav>
+                <label>Menu:</label>
+                <a href="#"><button type="button">Inicial</button></a>
+                <a href="#"><button type="button">Cadastrar membro</button></a>
+                <a href="#"><button type="button">Listar membros</button></a>
+                <a href="#"><button type="button">Grupos</button></a>
+                <a href="#"><button type="button">Configurações</button></a>
+            </nav>
+        </div>
+        <div class="conteudo">
+            <div class="container__header">
+                <div class="titulo">
+                    <h1>Sistema de Gerenciamento</h1>
+                </div>
+                <div class="icones">
+                    <img src="./assets/imgs/Dark.png" alt="Icone de uma lua que altera para o modo escuro">
+                    <img src="./assets/imgs/Notificação.png" alt="Icone de um sino para notificação sobre avisos">
+                </div>
+            </div>
+            <section class="formulario">
+                <div class="barra__progresso">
+                    <img src="./assets/imgs/progresso25.png" alt="Barra de progresso iniciando em 25%">
+                </div>
+                <h2 class="titulo__form">Formulário de cadastro</h2>
+                <form action="" class="container__form">
+                    <span class="titulo__categoria">Identificação</span>
+                    <div class="caixa__form">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" class="input__padrao">
+                    </div>
+                    <div class="caixa__dupla">
+                        <div class="rg">
+                            <label for="rg">RG:</label>
+                            <input type="text" id="rg" class="input__padrao">
+                        </div>
+                        <div class="cpf">
+                            <label for="cpf">CPF:</label>
+                            <input type="number" id="cpf" class="input__padrao">
+                        </div>
+                    </div>
+                    <div class="caixa__form">
+                        <label for="oe">Orgão Expedidor:</label>
+                        <input type="text" class="input__padrao" id="oe">
+                    </div>
+                    <div class="caixa__sexo">
+                        <span>Sexo:</span>
+                        <input type="radio" name="sexo" id="masculino">
+                        <label for="masculino">Masculino</label>
+                        <input type="radio" name="sexo" id="feminino">
+                        <label for="feminino">Feminino</label>
+                    </div>
+                    <div class="caixa__form">
+                        <label for="pai">Pai:</label>
+                        <input type="text" id="pai" class="input__padrao">
+                    </div>
+                    <div class="caixa__form">
+                        <label for="mae">Mãe:</label>
+                        <input type="text" id="mae" class="input__padrao">
+                    </div>
+                    <div class="caixa__form">
+                        <label for="naturalidade">Naturalidade:</label>
+                        <input type="text" id="naturalidade" class="input__padrao">
+                    </div>
+                    <div class="caixa__estados">
+                        <div class="uf">
+                            <label for="estados">UF:</label>
+                            <select id="estados" name="estados" class="input__padrao">
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                            </select>
+                        </div>
+                        <div class="pais">
+                            <label for="pais">País:</label>
+                            <input type="text" id="pais" class="input__padrao" value="Brasil">
+                        </div>
+                    </div>
+                    <button class="btn" type="submit">Próximo</button>
+                </form>
+            </section>
+        </div>
+    </section>
+    <footer class="container__footer">
+        <p>&copy; Todos os Direitos Reservados</p>
+    </footer>
+</body>
+
+</html>

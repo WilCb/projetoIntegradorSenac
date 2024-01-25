@@ -4,14 +4,43 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.conteudo {
+  background-image: url(./fundo-nuvens-abstrato-com-efeito-do-vintage-adicionado.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.container__header {
+  background-color: #948F87;
+  display: flex;
+  padding: 20px;
+  height: 70px;
+  align-items: center;
+  justify-content: space-between;
+}
+.container__header .titulo {
+  width: 100%;
+}
+.container__header .titulo h1 {
+  text-align: center;
+}
+.container__header .icones {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .geral {
   display: flex;
-  border: 1px solid;
 }
 
 .container__nav {
   align-items: center;
-  background-color: #EAEAEA;
+  background-color: #948F87;
   gap: 60px;
   width: 320px;
   display: flex;
@@ -21,7 +50,7 @@ body {
 .container__nav .img {
   width: 260px;
   height: 60px;
-  background-color: blue;
+  background-color: lightgray;
 }
 .container__nav nav {
   display: flex;
@@ -29,7 +58,7 @@ body {
   gap: 10px;
 }
 .container__nav nav a button {
-  background-color: #FFFFFF;
+  background-color: #BEAC95;
   width: 280px;
   padding: 20px 0;
   border-radius: 20px;
@@ -37,7 +66,7 @@ body {
   cursor: pointer;
 }
 .container__nav nav a button:hover {
-  background: #B1F5FA;
+  background: #EDCEA7;
 }
 
 .formulario {
@@ -57,7 +86,8 @@ body {
 
 .formulario .container__form {
   align-self: center;
-  background-color: #EAEAEA;
+  background-color: #948F87;
+  box-shadow: 20px 20px 20px #BEAC95;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -70,7 +100,8 @@ body {
 }
 
 .formulario .container__form .caixa__form, .formulario .container__form .caixa__estados .uf,
-.formulario .container__form .caixa__estados .pais, .formulario .container__form .cpf,
+.formulario .container__form .caixa__estados .pais, .formulario .container__form .logradouro,
+.formulario .container__form .numero, .formulario .container__form .cpf,
 .formulario .container__form .rg {
   display: flex;
   flex-direction: column;
@@ -78,18 +109,41 @@ body {
 }
 
 .formulario .container__form .caixa__form .input__padrao, .formulario .container__form .caixa__estados .uf .input__padrao,
-.formulario .container__form .caixa__estados .pais .input__padrao, .formulario .container__form .cpf .input__padrao,
+.formulario .container__form .caixa__estados .pais .input__padrao, .formulario .container__form .logradouro .input__padrao,
+.formulario .container__form .numero .input__padrao, .formulario .container__form .cpf .input__padrao,
 .formulario .container__form .rg .input__padrao {
   border: none;
   border-radius: 20px;
   padding: 15px;
-  outline-color: #B1F5FA;
+  outline-color: #EDCEA7;
 }
 
-.formulario .container__form .caixa__identidade {
+.formulario .container__form .caixa__form label::before, .formulario .container__form .caixa__estados .uf label::before,
+.formulario .container__form .caixa__estados .pais label::before, .formulario .container__form .logradouro label::before,
+.formulario .container__form .numero label::before, .formulario .container__form .cpf label::before,
+.formulario .container__form .rg label::before {
+  content: "*";
+}
+
+.formulario .container__form .caixa__form .nao__obrigatorio::before, .formulario .container__form .caixa__estados .uf .nao__obrigatorio::before,
+.formulario .container__form .caixa__estados .pais .nao__obrigatorio::before, .formulario .container__form .logradouro .nao__obrigatorio::before,
+.formulario .container__form .numero .nao__obrigatorio::before, .formulario .container__form .cpf .nao__obrigatorio::before,
+.formulario .container__form .rg .nao__obrigatorio::before {
+  content: "";
+}
+
+.formulario .container__form .caixa__dupla {
   display: flex;
   gap: 10px;
   justify-content: space-between;
+}
+
+.formulario .container__form .logradouro {
+  width: 80%;
+}
+
+.formulario .container__form .numero {
+  width: 20%;
 }
 
 .formulario .container__form .caixa__sexo {
@@ -112,7 +166,7 @@ body {
 
 .formulario .container__form .btn {
   margin: 20px 0;
-  background-color: #FFFFFF;
+  background-color: #BEAC95;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -120,27 +174,12 @@ body {
 }
 
 .formulario .container__form .btn:hover {
-  background-color: #B1F5FA;
+  background-color: #EDCEA7;
 } 
-/* Header */
-.main {
-  background-color: #6E97A4;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+.container__footer {
+  background-color: #756D7B;
+  padding: 40px 0;
 }
-
-.container__header {
-  background-color: #EAEAEA;
-  display: flex;
-  padding: 20px;
-  height: 70px;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.icones {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+.container__footer p {
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

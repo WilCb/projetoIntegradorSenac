@@ -1,0 +1,9 @@
+.conteudo {
+  background-image: url(./fundo-nuvens-abstrato-com-efeito-do-vintage-adicionado.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}/*# sourceMappingURL=conteudo.css.map */

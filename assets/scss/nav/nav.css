@@ -1,6 +1,6 @@
 .container__nav {
   align-items: center;
-  background-color: #EAEAEA;
+  background-color: #948F87;
   gap: 60px;
   width: 320px;
   display: flex;
@@ -10,7 +10,7 @@
 .container__nav .img {
   width: 260px;
   height: 60px;
-  background-color: blue;
+  background-color: lightgray;
 }
 .container__nav nav {
   display: flex;
@@ -18,7 +18,7 @@
   gap: 10px;
 }
 .container__nav nav a button {
-  background-color: #FFFFFF;
+  background-color: #BEAC95;
   width: 280px;
   padding: 20px 0;
   border-radius: 20px;
@@ -26,5 +26,5 @@
   cursor: pointer;
 }
 .container__nav nav a button:hover {
-  background: #B1F5FA;
+  background: #EDCEA7;
 }/*# sourceMappingURL=nav.css.map */

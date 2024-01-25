@@ -1,0 +1,12 @@
+@use '../variaveis/variaveis.scss';
+
+.conteudo {
+    // background-color: #6E97A4;
+    background-image: url(./fundo-nuvens-abstrato-com-efeito-do-vintage-adicionado.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

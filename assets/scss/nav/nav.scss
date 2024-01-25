@@ -1,8 +1,8 @@
-@use '../variaveis/variaveis.scss';
+@use '../variaveis/variaveis.scss' as v;
 
 .container__nav {
     align-items: center;
-    background-color: #EAEAEA;
+    background-color: v.$cor-terciaria;
     gap: 60px;
     width: 320px;
     display: flex;
@@ -12,7 +12,7 @@
     .img {
         width: 260px;
         height: 60px;
-        background-color: blue;
+        background-color: lightgray;
     }
 
     nav {
@@ -22,14 +22,14 @@
 
         a {
             button {
-                background-color: #FFFFFF;
+                background-color: v.$cor-secundaria;
                 width: 280px;
                 padding: 20px 0;
                 border-radius: 20px;
                 border: none;
                 cursor: pointer;
                 &:hover {
-                    background: variaveis.$cor-hover;
+                    background: v.$cor-primaria;
                 }
             }
 
