@@ -15,10 +15,17 @@ def autenticar():
         return redirect('/formularioidenficacao')
     else:
         return redirect('/')
+    
+@app.route('/logout')
+def logout():
+    session['usuario_logado'] == None
+    return redirect('/')
 
 # Rotas do formulário de cadastro
 @app.route('/formularioidenficacao')
 def formulario_de_idenficacao():
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        return redirect('/')
     return render_template('/formularios/formularioIdentificação.html')
 
 @app.route('/formularioendereco')
