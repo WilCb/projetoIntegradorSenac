@@ -42,6 +42,7 @@ body {
   align-items: center;
   background-color: #948F87;
   gap: 60px;
+  min-height: 900px;
   width: 320px;
   display: flex;
   flex-direction: column;
@@ -75,8 +76,24 @@ body {
   padding: 40px 20px;
 }
 
+.formulario .barra__progresso {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .formulario .barra__progresso img {
   width: 100%;
+}
+
+.formulario .barra__progresso .check {
+  max-width: 395px;
+}
+
+.formulario .barra__progresso .texto {
+  max-width: 400px;
 }
 
 .formulario .titulo__form {

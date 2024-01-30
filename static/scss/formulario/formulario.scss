@@ -6,8 +6,19 @@
     padding: 40px 20px;
 
     .barra__progresso {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 8px;
         img {
             width: 100%;
+        }
+        .check {
+            max-width: 395px;
+        }
+        .texto {
+            max-width: 400px;
         }
     }
 

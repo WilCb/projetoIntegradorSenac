@@ -3,8 +3,21 @@
   flex-direction: column;
   padding: 40px 20px;
 }
+.formulario .barra__progresso {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
 .formulario .barra__progresso img {
   width: 100%;
+}
+.formulario .barra__progresso .check {
+  max-width: 395px;
+}
+.formulario .barra__progresso .texto {
+  max-width: 400px;
 }
 .formulario .titulo__form {
   text-align: center;

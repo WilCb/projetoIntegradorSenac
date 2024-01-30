@@ -1,54 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela cadastro</title>
-    <link rel="stylesheet" href="../static/scss/style.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet">
-</head>
-
-<body>
-    <section class="geral">
-        <div class="container__nav">
-            <div class="img"></div>
-            <nav>
-                <label>Menu:</label>
-                <a href="#"><button type="button">Inicial</button></a>
-                <a href="#"><button type="button">Cadastrar membro</button></a>
-                <a href="#"><button type="button">Listar membros</button></a>
-                <a href="#"><button type="button">Grupos</button></a>
-                <a href="#"><button type="button">Configurações</button></a>
-            </nav>
-        </div>
-        <div class="conteudo">
-            <div class="container__header">
-                <div class="titulo">
-                    <h1>Sistema de Gerenciamento</h1>
-                </div>
-                <div class="icones">
-                    <img src="../static/img/Dark.png" alt="Icone de uma lua que altera para o modo escuro">
-                    <img src="../static/img/Notificação.png" alt="Icone de um sino para notificação sobre avisos">
-                </div>
-            </div>
+{% extends 'template.html' %}
+{% block conteudo %}
             <section class="formulario">
                 <div class="barra__progresso">
                     <img src="../static/img/progresso75.png" alt="Barra de progresso iniciando em 25%">
                 </div>
                 <h2 class="titulo__form">Formulário de cadastro</h2>
-                <form action="formulariooutros" method="post" class="container__form">
+                <form action="/formulariooutros" method="post" class="container__form">
                     <span class="titulo__categoria">Outros Dados</span>
                     <div class="caixa__form">
-                        <label for="dn">Data de Nascimento:</label>
-                        <input type="date" id="dn" class="input__padrao">
+                        <label for="dataNascimento">Data de Nascimento:</label>
+                        <input type="date" id="dataNascimento" name="dataNascimento" class="input__padrao">
                     </div>
                     <div class="caixa__form">
                         <label for="estadoCivil">Estado Civil:</label>
-                        <select name="" id="estadoCivil" class="input__padrao">
+                        <select name="estadoCivil" id="estadoCivil" class="input__padrao">
                             <option value="">Selecione</option>
                             <option value="Solteiro">Solteiro</option>
                             <option value="Casado">Casado</option>
@@ -59,16 +24,16 @@
                     </div>
                     <div class="caixa__form">
                         <label for="nomeConjuge">Nome do Cônjuge:</label>
-                        <input type="text" class="input__padrao" id="oe">
+                        <input type="text" class="input__padrao" id="nomeConjuge" name="nomeConjuge">
                     </div>
                     <div class="caixa__form">
                         <label for="profissao">Profissão:</label>
-                        <input type="text" class="input__padrao" id="profissao">
+                        <input type="text" class="input__padrao" id="profissao" name="profissao">
                     </div>
                     <div class="caixa__form">
-                        <label for="estadoCivil">Escolaridade:</label>
-                        <select name="estadoCivil" id="estadoCivil" class="input__padrao">
-                            <option value="">Selecione</option>
+                        <label for="escolaridade">Escolaridade:</label>
+                        <select name="escolaridade" id="escolaridade" class="input__padrao">
+                            <option value="" selected>Selecione</option>
                             <option value="Analfabeto">Analfabeto</option>
                             <option value="Alfabetizado">Alfabetizado</option>
                             <option value="Primário">Primário</option>
@@ -78,11 +43,11 @@
                         </select>
                     </div>
                     <div class="caixa__form">
-                        <label for="db">Data de Batismo:</label>
-                        <input type="text" class="input__padrao" id="db">
+                        <label for="dataDeBatismo">Data de Batismo:</label>
+                        <input type="text" class="input__padrao" id="dataDeBatismo" name="dataDeBatismo">
                     </div>
                     <div class="caixa__sexo">
-                        <span>*Batismo Ep.Santo?</span>
+                        <span>*Batizado Esp.Santo?</span>
                         <input type="radio" name="batismo" id="sim">
                         <label for="masculino">Sim</label>
                         <input type="radio" name="batismo" id="nao">
@@ -90,11 +55,11 @@
                     </div>
                     <div class="caixa__form">
                         <label for="rol">Entrada no ROL de membros:</label>
-                        <input type="text" id="rol" class="input__padrao">
+                        <input type="text" id="rol" name="rol" class="input__padrao">
                     </div>
                     <div class="caixa__form">
                         <label for="congregacao">Congregação:</label>
-                        <input type="text" id="congregacao" class="input__padrao">
+                        <input type="text" id="congregacao" name="congregacao" class="input__padrao">
                     </div>
                     <div class="caixa__form">
                         <label for="funcao">Função:</label>
@@ -134,17 +99,10 @@
                         </select>
                     </div>
                     <div class="caixa__form">
-                        <Label for="obs">De que Igreja e Cidade?</Label>
-                        <textarea name="obs" id="obs" cols="30" rows="10" class="input__padrao"></textarea>
+                        <Label for="observacao">De que Igreja e Cidade?</Label>
+                        <textarea name="observacao" id="observacao" cols="30" rows="10" class="input__padrao"></textarea>
                     </div>
                     <button class="btn" type="submit">Próximo</button>
                 </form>
             </section>
-        </div>
-    </section>
-    <footer class="container__footer">
-        <p>&copy; Todos os Direitos Reservados</p>
-    </footer>
-</body>
-
-</html>
+{% endblock %}
