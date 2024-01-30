@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Cadastro</title>
-    <link rel="stylesheet" href="/assets/scss/style.css">
+    <link rel="stylesheet" href="../static/scss/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,16 +31,16 @@
                     <h1>Sistema de Gerenciamento</h1>
                 </div>
                 <div class="icones">
-                    <img src="./assets/imgs/Dark.png" alt="Icone de uma lua que altera para o modo escuro">
-                    <img src="./assets/imgs/Notificação.png" alt="Icone de um sino para notificação sobre avisos">
+                    <img src="../static/img/Dark.png" alt="Icone de uma lua que altera para o modo escuro">
+                    <img src="../static/img/Notificação.png" alt="Icone de um sino para notificação sobre avisos">
                 </div>
             </div>
             <section class="formulario">
                 <div class="barra__progresso">
-                    <img src="./assets/imgs/progresso50.png" alt="Barra de progresso iniciando em 25%">
+                    <img src="../static/img/progresso75.png" alt="Barra de progresso iniciando em 25%">
                 </div>
                 <h2 class="titulo__form">Formulário de cadastro</h2>
-                <form action="" class="container__form">
+                <form action="/formularioendereco" method="post" class="container__form">
                     <span class="titulo__categoria">Endereço</span>
                     <div class="caixa__form">
                         <label for="cep">CEP:</label>
@@ -68,7 +68,7 @@
                     <div class="caixa__estados">
                         <div class="pais">
                             <label for="cidade">Cidade:</label>
-                            <input type="text" id="cidade" class="input__padrao">
+                            <input type="text" id="cidade" name="cidade" class="input__padrao">
                         </div>
                         <div class="uf">
                             <label for="estados">UF:</label>

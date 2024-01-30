@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="../static/scss/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <body class="p-3 m-0 border-0 bd-example m-0 border-0 conteudo">
+        <form action="/autenticar" method="post" class="container w-25">
+            <h1 class="text-center">Login</h1>
+            <div class="mb-3">
+                <label for="usuario" class="form-label">Usuário</label>
+                <input type="text" class="form-control" id="usuario" name="usuario">
+            </div>
+            <div class="mb-3">
+                <label for="pwd" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="pwd" name="senha">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="chk">
+                <label class="form-check-label" for="chk">Mostrar senha</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script src="../static/js/mostrarSenha.js"></script>
+</body>
+
+</html>

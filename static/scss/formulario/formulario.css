@@ -24,32 +24,43 @@
   font-weight: 600;
 }
 .formulario .container__form .caixa__form, .formulario .container__form .caixa__estados .uf,
-.formulario .container__form .caixa__estados .pais, .formulario .container__form .logradouro,
-.formulario .container__form .numero, .formulario .container__form .cpf,
-.formulario .container__form .rg {
+.formulario .container__form .caixa__estados .pais, .formulario .container__form .cpf,
+.formulario .container__form .rg,
+.formulario .container__form .logradouro,
+.formulario .container__form .numero {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 .formulario .container__form .caixa__form .input__padrao, .formulario .container__form .caixa__estados .uf .input__padrao,
-.formulario .container__form .caixa__estados .pais .input__padrao, .formulario .container__form .logradouro .input__padrao,
-.formulario .container__form .numero .input__padrao, .formulario .container__form .cpf .input__padrao,
-.formulario .container__form .rg .input__padrao {
+.formulario .container__form .caixa__estados .pais .input__padrao, .formulario .container__form .cpf .input__padrao,
+.formulario .container__form .rg .input__padrao,
+.formulario .container__form .logradouro .input__padrao,
+.formulario .container__form .numero .input__padrao {
   border: none;
   border-radius: 20px;
   padding: 15px;
   outline-color: #EDCEA7;
 }
+.formulario .container__form .caixa__form .input__padrao option, .formulario .container__form .caixa__estados .uf .input__padrao option,
+.formulario .container__form .caixa__estados .pais .input__padrao option, .formulario .container__form .cpf .input__padrao option,
+.formulario .container__form .rg .input__padrao option,
+.formulario .container__form .logradouro .input__padrao option,
+.formulario .container__form .numero .input__padrao option {
+  text-align: center;
+}
 .formulario .container__form .caixa__form label::before, .formulario .container__form .caixa__estados .uf label::before,
-.formulario .container__form .caixa__estados .pais label::before, .formulario .container__form .logradouro label::before,
-.formulario .container__form .numero label::before, .formulario .container__form .cpf label::before,
-.formulario .container__form .rg label::before {
+.formulario .container__form .caixa__estados .pais label::before, .formulario .container__form .cpf label::before,
+.formulario .container__form .rg label::before,
+.formulario .container__form .logradouro label::before,
+.formulario .container__form .numero label::before {
   content: "*";
 }
 .formulario .container__form .caixa__form .nao__obrigatorio::before, .formulario .container__form .caixa__estados .uf .nao__obrigatorio::before,
-.formulario .container__form .caixa__estados .pais .nao__obrigatorio::before, .formulario .container__form .logradouro .nao__obrigatorio::before,
-.formulario .container__form .numero .nao__obrigatorio::before, .formulario .container__form .cpf .nao__obrigatorio::before,
-.formulario .container__form .rg .nao__obrigatorio::before {
+.formulario .container__form .caixa__estados .pais .nao__obrigatorio::before, .formulario .container__form .cpf .nao__obrigatorio::before,
+.formulario .container__form .rg .nao__obrigatorio::before,
+.formulario .container__form .logradouro .nao__obrigatorio::before,
+.formulario .container__form .numero .nao__obrigatorio::before {
   content: "";
 }
 .formulario .container__form .caixa__dupla {

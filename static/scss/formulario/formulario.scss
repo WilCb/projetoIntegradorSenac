@@ -43,7 +43,9 @@
                 border-radius: 20px;
                 padding: 15px;
                 outline-color: v.$cor-primaria;
-
+                option {
+                    text-align: center;
+                }
             }
 
             label {
