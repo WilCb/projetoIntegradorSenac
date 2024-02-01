@@ -1,0 +1,36 @@
+@use '../variaveis/variaveis.css' as v;
+
+.geral__tabela {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 40px 0;
+
+    .container__tabela {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 20px;
+        background-color: #FFFFFF;
+        padding: 40px 20px;
+
+        .conteudo__tabela {
+            .titulos__tabela {
+                border: 1px solid;
+                padding: 5px;
+            }
+
+        }
+    }
+
+    .btn {
+        margin: 20px 0;
+        background-color: #BEAC95;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        padding: 10px 40px;
+    }
+}
