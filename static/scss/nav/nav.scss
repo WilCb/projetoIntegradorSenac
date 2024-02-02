@@ -3,12 +3,14 @@
 .container__nav {
     align-items: center;
     background-color: v.$cor-terciaria;
-    gap: 60px;
-    min-height: 900px;
-    width: 320px;
     display: flex;
+    gap: 60px;
     flex-direction: column;
+    min-height: 900px;
     padding: 20px;
+    position: relative;
+    top: 0;
+    min-width: 320px;
 
     .img {
         width: 260px;
@@ -20,6 +22,8 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
+        position: fixed;
+        top: 150px;
 
         a {
             button {

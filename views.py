@@ -28,15 +28,15 @@ def formulario_de_cadastro():
         try:
             conexao = criar_conexao()
             cursor = conexao.cursor()
-
+            
             pegar_dados_do_formulario = [
-                request.form['nome'], request.form['rg'], request.form['cpf'], request.form['orgaoExpedidor'],
-                request.form['sexo'], request.form['pai'], request.form['mae'], request.form['naturalidade'],
+                request.form['nome'].upper().lstrip().rstrip(), request.form['rg'], request.form['cpf'], request.form['orgaoExpedidor'],
+                request.form['sexo'].upper().lstrip().rstrip(), request.form['pai'], request.form['mae'], request.form['naturalidade'],
                 request.form['pais'], request.form['estados'], request.form['cep'].replace('-', ''),
                 request.form['logradouro'], request.form['numero'], request.form['complemento'],
-                request.form['bairro'], request.form['cidade'], request.form['uf'], request.form['telefone'],
+                request.form['bairro'].upper().lstrip().rstrip(), request.form['cidade'], request.form['uf'], request.form['telefone'],
                 request.form['dataNascimento'], request.form['estadoCivil'], request.form['nomeConjuge'],
-                request.form['profissao'], request.form['escolaridade'], request.form['dataDeBatismo'],
+                request.form['profissao'].upper().lstrip().rstrip(), request.form['escolaridade'], request.form['dataDeBatismo'],
                 request.form['batismo'], request.form['rol'], request.form['congregacao'], request.form['funcao'],
                 request.form['origem'], request.form['situacao'], request.form['observacao']
             ]

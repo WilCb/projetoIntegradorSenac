@@ -1,4 +1,4 @@
-@use '../variaveis/variaveis.css' as v;
+@use '../variaveis/variaveis.scss' as v;
 
 .geral__tabela {
     display: flex;
@@ -16,10 +16,11 @@
         background-color: #FFFFFF;
         padding: 40px 20px;
 
-        .conteudo__tabela {
-            .titulos__tabela {
-                border: 1px solid;
-                padding: 5px;
+        .conteudo__tabela-lista {
+            .lista__tabela {
+                font-size: 12px;
+                border-bottom: 1px solid;
+                padding: 2px;
             }
 
         }
@@ -27,10 +28,14 @@
 
     .btn {
         margin: 20px 0;
-        background-color: #BEAC95;
+        background-color: v.$cor-secundaria;
         border: none;
         border-radius: 20px;
         cursor: pointer;
         padding: 10px 40px;
+
+        &:hover {
+            background-color: v.$cor-primaria;
+        }
     }
 }

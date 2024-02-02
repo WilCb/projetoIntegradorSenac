@@ -1,0 +1,22 @@
+@media print {
+    .no-print {
+        visibility: hidden;
+    }
+    @page {
+        size: auto; /* Pode ser 'auto', 'A4', 'letter', etc. */
+        margin: 0; /* Remove as margens padrão */
+    }
+
+    /* Torna o conteúdo visível ocupar toda a folha */
+    .geral__tabela {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .print {
+        visibility: visible;
+        
+    }
+}

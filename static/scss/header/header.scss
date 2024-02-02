@@ -1,12 +1,15 @@
 @use '../variaveis/variaveis.scss' as v;
 
 .container__header {
+    align-items: center;
     background-color: v.$cor-terciaria;
     display: flex;
-    padding: 20px;
     height: 70px;
-    align-items: center;
     justify-content: space-between;
+    padding: 20px;
+    position: fixed;
+    right: 0;
+    width: 100%;
     .titulo {
         width: 100%;
         h1 {

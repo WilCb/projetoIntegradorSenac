@@ -7,23 +7,23 @@
         <button type="submit">Gerar lista</button>
     </form>
     {% if resultados %}
-    <table class="container__tabela">
+    <table class="container__tabela print">
         <tr class="titulos__tabela">
           <th class="titulo__tabela">Nome</th>
           <th class="titulo__tabela">RG</th>
           <th class="titulo__tabela">CPF</th>
-          <th class="titulo__tabela">Orgão expedidor</th>
+          <th class="titulo__tabela">Org. expedidor</th>
           <th class="titulo__tabela">Pai</th>
           <th class="titulo__tabela">Mãe</th>
         </tr>
         {% for resultado in resultados %}
-        <tr class="conteudo__tabela">
-          <td class="titulos__tabela">{{ resultado[0] }}</td>
-          <td class="titulos__tabela">{{ resultado[1] }}</td>
-          <td class="titulos__tabela">{{ resultado[2] }}</td>
-          <td class="titulos__tabela">{{ resultado[3] }}</td>
-          <td class="titulos__tabela">{{ resultado[4] }}</td>
-          <td class="titulos__tabela">{{ resultado[5] }}</td>
+        <tr class="conteudo__tabela-lista">
+          <td class="lista__tabela">{{ resultado[0] }}</td>
+          <td class="lista__tabela">{{ resultado[1] }}</td>
+          <td class="lista__tabela">{{ resultado[2] }}</td>
+          <td class="lista__tabela">{{ resultado[3] }}</td>
+          <td class="lista__tabela">{{ resultado[4] }}</td>
+          <td class="lista__tabela">{{ resultado[5] }}</td>
         </tr>
         {% endfor %}
     </table>

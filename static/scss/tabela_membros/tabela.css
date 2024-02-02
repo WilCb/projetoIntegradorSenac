@@ -1,4 +1,3 @@
-
 .geral__tabela {
   display: flex;
   flex-direction: column;
@@ -15,9 +14,10 @@
   background-color: #FFFFFF;
   padding: 40px 20px;
 }
-.geral__tabela .container__tabela .conteudo__tabela .titulos__tabela {
-  border: 1px solid;
-  padding: 5px;
+.geral__tabela .container__tabela .conteudo__tabela-lista .lista__tabela {
+  font-size: 12px;
+  border-bottom: 1px solid;
+  padding: 2px;
 }
 .geral__tabela .btn {
   margin: 20px 0;
@@ -26,4 +26,7 @@
   border-radius: 20px;
   cursor: pointer;
   padding: 10px 40px;
+}
+.geral__tabela .btn:hover {
+  background-color: #EDCEA7;
 }/*# sourceMappingURL=tabela.css.map */
