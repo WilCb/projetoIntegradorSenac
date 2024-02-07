@@ -16,16 +16,19 @@
     <section class="geral">
         <div class="container__nav no-print">
             <nav>
-                <label>Menu:</label>
                 <a href="{{ url_for('index') }}"><button type="button">Inicial</button></a>
                 <a href="{{ url_for('formulario_de_cadastro') }}"><button type="button">Cadastrar membro</button></a>
                 <a href="{{ url_for('listarMembros') }}"><button type="button">Listar membros</button></a>
+                <a href="{{ url_for('consultarMembro') }}"><button type="button">Consultar membro</button></a>
                 <a href="#"><button type="button">Grupos</button></a>
                 <a href="#"><button type="button">Configurações</button></a>
             </nav>
         </div>
         <div class="conteudo no-print">
             <div class="container__header">
+                <div class="container__img">
+                    <img class="logo" src="../static/img/sgmad-removebg-preview.png" alt="">
+                </div>
                 <div class="titulo">
                     <h1>Sistema de Gerenciamento</h1>
                 </div>

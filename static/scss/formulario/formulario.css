@@ -26,8 +26,8 @@
 }
 .formulario .container__form {
   align-self: center;
-  background-color: #948F87;
-  box-shadow: 20px 20px 20px #BEAC95;
+  background-color: none;
+  /*  box-shadow: 20px 20px 20px v.$cor-secundaria; */
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -51,8 +51,8 @@
 .formulario .container__form .rg .input__padrao,
 .formulario .container__form .logradouro .input__padrao,
 .formulario .container__form .numero .input__padrao {
-  border: none;
-  border-radius: 20px;
+  border: 0.1rem solid;
+  border-radius: 10px;
   padding: 15px;
   outline-color: #EDCEA7;
 }

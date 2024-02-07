@@ -1,5 +1,6 @@
 .conteudo {
-  background-image: url(./fundo-nuvens-abstrato-com-efeito-do-vintage-adicionado.png);
+  background-color: #F8F9FA;
+  background-image: url(/static/img/fundo_body.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;

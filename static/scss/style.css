@@ -6,7 +6,8 @@ body {
 }
 
 .conteudo {
-  background-image: url(./fundo-nuvens-abstrato-com-efeito-do-vintage-adicionado.png);
+  background-color: #F8F9FA;
+  background-image: url(/static/img/fundo_body.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -17,14 +18,22 @@ body {
 
 .container__header {
   align-items: center;
-  background-color: #948F87;
+  background-color: #F8F9FA;
   display: flex;
-  height: 70px;
+  height: 50px;
   justify-content: space-between;
-  padding: 20px;
+  padding: 40px 20px;
   position: fixed;
   right: 0;
   width: 100%;
+  border-bottom: 0.1rem solid;
+  /* box-shadow: -1px 6px 5px -5px rgba(10,10,10,1);
+  -webkit-box-shadow: -1px 6px 5px -5px rgba(10,10,10,1);
+  -moz-box-shadow: -1px 6px 5px -5px rgba(10,10,10,1);
+   */
+}
+.container__header .container__img {
+  margin-left: 70px;
 }
 .container__header .titulo {
   width: 100%;
@@ -37,6 +46,9 @@ body {
   align-items: center;
   gap: 16px;
 }
+.container__header #img {
+  padding-left: 50px;
+}
 
 .geral {
   display: flex;
@@ -44,7 +56,7 @@ body {
 
 .container__nav {
   align-items: center;
-  background-color: #948F87;
+  background-color: #6f88be;
   display: flex;
   gap: 60px;
   flex-direction: column;
@@ -52,7 +64,11 @@ body {
   padding: 20px;
   position: relative;
   top: 0;
-  min-width: 320px;
+  min-height: 80rem;
+  min-width: 17rem;
+  box-shadow: 9px 2px 5px -1px rgba(10, 10, 10, 0.46);
+  -webkit-box-shadow: 9px 2px 5px -1px rgba(10, 10, 10, 0.46);
+  -moz-box-shadow: 9px 2px 5px -1px rgba(10, 10, 10, 0.46);
 }
 .container__nav .img {
   width: 260px;
@@ -62,20 +78,22 @@ body {
 .container__nav nav {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   position: fixed;
   top: 150px;
+  margin-top: 40px;
 }
 .container__nav nav a button {
-  background-color: #BEAC95;
-  width: 280px;
+  color: #ffffff;
+  background-color: #F82825;
+  width: 200px;
   padding: 20px 0;
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
 }
 .container__nav nav a button:hover {
-  background: #EDCEA7;
+  background: #f3c21d;
 }
 
 .formulario {
@@ -106,8 +124,8 @@ body {
 }
 .formulario .container__form {
   align-self: center;
-  background-color: #948F87;
-  box-shadow: 20px 20px 20px #BEAC95;
+  background-color: none;
+  /*  box-shadow: 20px 20px 20px v.$cor-secundaria; */
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -131,8 +149,8 @@ body {
 .formulario .container__form .rg .input__padrao,
 .formulario .container__form .logradouro .input__padrao,
 .formulario .container__form .numero .input__padrao {
-  border: none;
-  border-radius: 20px;
+  border: 0.1rem solid;
+  border-radius: 10px;
   padding: 15px;
   outline-color: #EDCEA7;
 }
@@ -196,10 +214,11 @@ body {
 }
 
 .geral__tabela {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 16px;
+  margin-top: 120px;
   padding: 40px 0;
 }
 .geral__tabela .container__tabela {

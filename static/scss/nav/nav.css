@@ -1,6 +1,6 @@
 .container__nav {
   align-items: center;
-  background-color: #948F87;
+  background-color: #6f88be;
   display: flex;
   gap: 60px;
   flex-direction: column;
@@ -8,7 +8,11 @@
   padding: 20px;
   position: relative;
   top: 0;
-  min-width: 320px;
+  min-height: 80rem;
+  min-width: 17rem;
+  box-shadow: 9px 2px 5px -1px rgba(10, 10, 10, 0.46);
+  -webkit-box-shadow: 9px 2px 5px -1px rgba(10, 10, 10, 0.46);
+  -moz-box-shadow: 9px 2px 5px -1px rgba(10, 10, 10, 0.46);
 }
 .container__nav .img {
   width: 260px;
@@ -18,18 +22,20 @@
 .container__nav nav {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   position: fixed;
   top: 150px;
+  margin-top: 40px;
 }
 .container__nav nav a button {
-  background-color: #BEAC95;
-  width: 280px;
+  color: #ffffff;
+  background-color: #F82825;
+  width: 200px;
   padding: 20px 0;
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
 }
 .container__nav nav a button:hover {
-  background: #EDCEA7;
+  background: #f3c21d;
 }/*# sourceMappingURL=nav.css.map */

@@ -32,9 +32,9 @@ def formulario_de_cadastro():
             pegar_dados_do_formulario = [
                 request.form['nome'].upper().lstrip().rstrip(), request.form['rg'], request.form['cpf'], request.form['orgaoExpedidor'],
                 request.form['sexo'].upper().lstrip().rstrip(), request.form['pai'], request.form['mae'], request.form['naturalidade'],
-                request.form['pais'], request.form['estados'], request.form['cep'].replace('-', ''),
+                request.form['ufIdentidade'], request.form['pais'], request.form['cep'].replace('-', ''),
                 request.form['logradouro'], request.form['numero'], request.form['complemento'],
-                request.form['bairro'].upper().lstrip().rstrip(), request.form['cidade'], request.form['uf'], request.form['telefone'],
+                request.form['bairro'].upper().lstrip().rstrip(), request.form['cidade'], request.form['ufEndereco'], request.form['telefone'],
                 request.form['dataNascimento'], request.form['estadoCivil'], request.form['nomeConjuge'],
                 request.form['profissao'].upper().lstrip().rstrip(), request.form['escolaridade'], request.form['dataDeBatismo'],
                 request.form['batismo'], request.form['rol'], request.form['congregacao'], request.form['funcao'],
@@ -77,6 +77,21 @@ def listarMembros():
 
         return render_template('/listar_membros.html', resultados=resultados)
     return render_template('/listar_membros.html')
+
+@app.route('/consultar-membro', methods=['GET', 'POST'])
+def consultarMembro():
+    if request.method == 'POST':
+        buscaPorCpf = request.form['buscaPorCpf']
+        
+        conexao = criar_conexao()
+        cursor = conexao.cursor()
+        cursor.execute('SELECT nome, rg, orgao_expedidor, sexo, pai, mae, naturalidade, uf_identidade, pais, cep, logradouro, numero, complemento, bairro, cidade, uf_endereco, telefone FROM cadastro WHERE cpf = (%s)', (buscaPorCpf,))
+        # data_nasc, estado_civil, nome_conjuge, profissao, escolaridade, data_batismo, batizado_esp_santo, entrada_rol_membros, congregacao, funcao, origem, situacao, igreja_cidade FROM cadastro'
+        resultados = cursor.fetchall()
+        conexao.close()
+
+        return render_template('/consultar_membro.html', resultados=resultados)
+    return render_template('/consultar_membro.html')
 
 @app.route('/erro-no-cadastro')
 def erro_no_cadastro():
