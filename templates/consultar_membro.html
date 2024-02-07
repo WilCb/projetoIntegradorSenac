@@ -4,9 +4,9 @@
     <h2 class="titulo__form">Dados do membro cadastrado</h2>
     <form action="{{ url_for('consultarMembro') }}" method="post" class="container__form">
         <div class="cpf">
-            <label for="cpf">CPF:</label>
-            <input type="number" id="cpf" name="buscaPorCpf" class="input__padrao">
-            <button type="submit" class="btn">Buscar</button>
+            <label for="buscaPorCpf">CPF:</label>
+            <input type="number" id="buscaPorCpf" name="buscaPorCpf" class="input__padrao">
+            <button type="submit" id="buscarCpf" class="btn" disabled>Buscar</button>
         </div>
     </form>
     {% if resultados %}
