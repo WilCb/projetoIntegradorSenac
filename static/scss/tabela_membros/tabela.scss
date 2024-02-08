@@ -9,18 +9,25 @@
     padding: 40px 0;
 
     .container__tabela {
-        text-align: center;
+        background-color: #FFFFFF;
+        border-collapse: collapse;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
         gap: 20px;
-        background-color: #FFFFFF;
+        justify-content: space-around;
         padding: 40px 20px;
+        text-align: center;
+
+        .titulos__tabela {
+            .titulo__tabela {
+                border: 1px solid;
+            }
+        }
 
         .conteudo__tabela-lista {
             .lista__tabela {
                 font-size: 12px;
-                border-bottom: 1px solid;
+                border: 1px solid;
                 padding: 2px;
             }
 

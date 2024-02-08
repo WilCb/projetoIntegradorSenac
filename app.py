@@ -7,7 +7,7 @@ def criar_conexao():
     return conecta
 
 app = Flask(__name__)
-Flask.secret_key = 'will'
+app.config.from_pyfile('config.py')
 
 from views import *
 

@@ -12,9 +12,19 @@
 </head>
 
 <body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul id="messages" class="list-unstyled">
+        {% for message in messages %}
+        <li class="alert alert-success">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
 
     <body class="p-3 m-0 border-0 bd-example m-0 border-0 conteudo">
-        <form action="/autenticar" method="post" class="container w-25">
+        <form action="{{url_for('autenticar')}}" method="post" class="container w-25">
+            <input type="hidden" name="proxima" value="{{ proxima }}">
             <h1 class="text-center">Login</h1>
             <div class="mb-3">
                 <label for="usuario" class="form-label">Usuário</label>

@@ -1,0 +1,255 @@
+{% extends 'template.html' %}
+{% block conteudo %}
+            <section class="formulario" id="formulario">
+                <div class="barra__progresso">
+                    <img src="../static/img/progresso25.png" alt="Barra de progresso iniciando em 25%">
+                </div>
+                <h2 class="titulo__form">Formulário de cadastro</h2>
+                <form action="/formularioidenficacao" method="post" class="container__form">
+                    <span class="titulo__categoria">Identificação</span>
+                    <div class="caixa__form">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" class="input__padrao">
+                    </div>
+                    <div class="caixa__dupla">
+                        <div class="rg">
+                            <label for="rg">RG:</label>
+                            <input type="text" id="rg" name="rg" class="input__padrao">
+                        </div>
+                        <div class="cpf">
+                            <label for="cpf">CPF:</label>
+                            <input type="number" id="cpf" name="cpf" class="input__padrao">
+                        </div>
+                    </div>
+                    <div class="caixa__form">
+                        <label for="orgaoExpedidor">Orgão Expedidor:</label>
+                        <input type="text" class="input__padrao" id="orgaoExpedidor" name="orgaoExpedidor">
+                    </div>
+                    <div class="caixa__form">
+                        <label for="sexo">Sexo:</label>
+                        <select name="sexo" id="sexo" class="input__padrao">
+                            <option value="" selected>Selecione</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                        </select>
+                    </div>
+                    <div class="caixa__form">
+                        <label for="pai">Pai:</label>
+                        <input type="text" id="pai" name="pai" class="input__padrao">
+                    </div>
+                    <div class="caixa__form">
+                        <label for="mae">Mãe:</label>
+                        <input type="text" id="mae" name="mae" class="input__padrao">
+                    </div>
+                    <div class="caixa__form">
+                        <label for="naturalidade">Naturalidade:</label>
+                        <input type="text" id="naturalidade" name="naturalidade" class="input__padrao">
+                    </div>
+                    <div class="caixa__estados">
+                        <div class="uf">
+                            <label for="estados">UF Identidade:</label>
+                            <select id="estados" name="estados" class="input__padrao">
+                                <option value="" selected>Selecione</option>
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                            </select>
+                        </div>
+                        <div class="pais">
+                            <label for="pais">País:</label>
+                            <input type="text" id="pais" name="pais" class="input__padrao" value="Brasil">
+                        </div>
+                    </div>
+                    <span class="titulo__categoria">Endereço</span>
+                    <div class="caixa__form">
+                        <label for="cep">CEP:</label>
+                        <input type="text" id="cep" name="cep" class="input__padrao">
+                        <p id="erro"></p>
+                    </div>
+                    <div class="caixa__dupla">
+                        <div class="logradouro">
+                            <label for="logradouro">Logradouro:</label>
+                            <input type="text" id="logradouro" name="logradouro" class="input__padrao">
+                        </div>
+                        <div class="numero">
+                            <label for="numero">N°:</label>
+                            <input type="number" id="numero" name="numero" class="input__padrao">
+                        </div>
+                    </div>
+                    <div class="caixa__form">
+                        <label for="complemento" class="nao__obrigatorio">Complemento:</label>
+                        <input type="text" class="input__padrao" id="complemento" name="complemento">
+                    </div>
+                    <div class="caixa__form">
+                        <label for="bairro">Bairro:</label>
+                        <input type="text" id="bairro" name="bairro" class="input__padrao">
+                    </div>
+                    <div class="caixa__estados">
+                        <div class="pais">
+                            <label for="cidade">Cidade:</label>
+                            <input type="text" id="cidade" name="cidade" class="input__padrao">
+                        </div>
+                        <div class="uf">
+                            <label for="uf">UF Endereço:</label>
+                            <select id="uf" name="uf" class="input__padrao">
+                                <option value="" selected>Selecione</option>
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="caixa__form">
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone" class="input__padrao">
+                    </div>
+                    <span class="titulo__categoria">Outros Dados</span>
+                    <div class="caixa__form">
+                        <label for="dataNascimento">Data de Nascimento:</label>
+                        <input type="date" id="dataNascimento" name="dataNascimento" class="input__padrao">
+                    </div>
+                    <div class="caixa__form">
+                        <label for="estadoCivil">Estado Civil:</label>
+                        <select name="estadoCivil" id="estadoCivil" class="input__padrao">
+                            <option value="">Selecione</option>
+                            <option value="Solteiro">Solteiro</option>
+                            <option value="Casado">Casado</option>
+                            <option value="Divorciado">Divorciado</option>
+                            <option value="Viúvo">Viúvo</option>
+                            <option value="Sep. Judicialmente">Sep. Judicialmente</option>
+                        </select>
+                    </div>
+                    <div class="caixa__form">
+                        <label for="nomeConjuge">Nome do Cônjuge:</label>
+                        <input type="text" class="input__padrao" id="nomeConjuge" name="nomeConjuge">
+                    </div>
+                    <div class="caixa__form">
+                        <label for="profissao">Profissão:</label>
+                        <input type="text" class="input__padrao" id="profissao" name="profissao">
+                    </div>
+                    <div class="caixa__form">
+                        <label for="escolaridade">Escolaridade:</label>
+                        <select name="escolaridade" id="escolaridade" class="input__padrao">
+                            <option value="" selected>Selecione</option>
+                            <option value="Analfabeto">Analfabeto</option>
+                            <option value="Alfabetizado">Alfabetizado</option>
+                            <option value="Primário">Primário</option>
+                            <option value="1° Grau">1° Grau</option>
+                            <option value="2° Grau">2° Grau</option>
+                            <option value="Superior">Superior</option>
+                        </select>
+                    </div>
+                    <div class="caixa__form">
+                        <label for="dataDeBatismo">Data de Batismo:</label>
+                        <input type="date" class="input__padrao" id="dataDeBatismo" name="dataDeBatismo">
+                    </div>
+                    <div class="caixa__form">
+                        <label for="batismo">É batizado no espírito santo?</label>
+                        <select name="batismo" id="batismo" class="input__padrao">
+                            <option value="" selected>Selecione</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>
+                    </div>
+                    <div class="caixa__form">
+                        <label for="rol">Entrada no ROL de membros:</label>
+                        <input type="date" id="rol" name="rol" class="input__padrao">
+                    </div>
+                    <div class="caixa__form">
+                        <label for="congregacao">Congregação:</label>
+                        <input type="text" id="congregacao" name="congregacao" class="input__padrao">
+                    </div>
+                    <div class="caixa__form">
+                        <label for="funcao">Função:</label>
+                        <select name="funcao" id="funcao" class="input__padrao">
+                            <option value="">Selecione</option>
+                            <option value="PASTOR">PASTOR</option>
+                            <option value="EVANGELISTA">EVANGELISTA</option>
+                            <option value="PRESBÍTERIO">PRESBÍTERIO</option>
+                            <option value="DIÁCONO">DIÁCONO</option>
+                            <option value="AUXILIAR">AUXILIAR</option>
+                            <option value="MEMBRO">MEMBRO</option>
+                        </select>
+                    </div>
+                    <div class="caixa__form">
+                        <label for="origem">Origem:</label>
+                        <select name="origem" id="origem" class="input__padrao">
+                            <option value="">Selecione</option>
+                            <option value="PASTOR">BATISMO</option>
+                            <option value="EVANGELISTA">TRANFERÊNCIA</option>
+                            <option value="PRESBÍTERIO">PRESBÍTERIO</option>
+                            <option value="DIÁCONO">ACLAMAÇÃO</option>
+                            <option value="AUXILIAR">CONGREGAÇÃO</option>
+                        </select>
+                    </div>
+                    <div class="caixa__form">
+                        <label for="situacao">Situação:</label>
+                        <select name="situacao" id="situacao" class="input__padrao">
+                            <option value="">Selecione</option>
+                            <option value="PASTOR">ATIVO</option>
+                            <option value="EVANGELISTA">DISCIPLINADO</option>
+                            <option value="PRESBÍTERIO">TRANSFERIDO</option>
+                            <option value="DIÁCONO">FALECIDO</option>
+                            <option value="AUXILIAR">CAND. BATISMO</option>
+                            <option value="DESVIADO">DESVIADO</option>
+                            <option value="CONGREGADO">CONGREGADO</option>
+                            <option value="DESCONHECIDO">DESCONHECIDO</option>
+                        </select>
+                    </div>
+                    <div class="caixa__form">
+                        <Label for="observacao">De que Igreja e Cidade?</Label>
+                        <textarea name="observacao" id="observacao" cols="30" rows="10" class="input__padrao"></textarea>
+                    </div>
+                    <button class="btn" type="submit">Cadastrar</button>
+                </form>
+            </section>
+
+{% endblock %}

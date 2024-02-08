@@ -11,9 +11,17 @@
     .geral__tabela {
         width: 100%;
         height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
+        .container__tabela {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            .conteudo__tabela-lista {
+                .lista__tabela {
+                    font-size: 10px;
+                }
+            }
+        }
     }
     .print {
         visibility: visible;

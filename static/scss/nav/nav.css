@@ -35,6 +35,7 @@
   border-radius: 10px;
   border: none;
   cursor: pointer;
+  transition: 0.5s;
 }
 .container__nav nav a button:hover {
   background: #f3c21d;
