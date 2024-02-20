@@ -1,0 +1,158 @@
+{% extends 'template.html' %}
+{% block conteudo %}
+<section class="formulario" id="formulario">
+    <h2 class="titulo__form">Dados do membro cadastrado</h2>
+    <form action="" method="post" class="container__form">
+        <div class="cpf">
+            <label for="buscaPorCpf">CPF:</label>
+            <input type="number" id="buscaPorCpf" name="buscaPorCpf" class="input__padrao">
+            <button type="submit" id="buscarCpf" class="btn" disabled>Buscar</button>
+        </div>
+    </form>
+    {% if resultados %}
+    <div class="container__form">
+        {% for resultado in resultados %}
+        <span class="titulo__categoria">Identificação</span>
+        <div class="caixa__form">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" class="input__padrao" value="{{ resultado[0] }}">
+        </div>
+        <div class="caixa__form">
+            <div class="rg">
+                <label for="rg">RG:</label>
+                <input type="text" id="rg" name="rg" class="input__padrao" value="{{ resultado[1] }}">
+            </div>
+
+        </div>
+
+        <div class="caixa__form">
+            <label for="orgaoExpedidor">Orgão Expedidor:</label>
+            <input type="text" class="input__padrao" id="orgaoExpedidor" name="orgaoExpedidor" value="{{ resultado[2] }}">
+        </div>
+        <div class="caixa__form">
+            <label for="sexo">Sexo:</label>
+            <input type="text" name="sexo" id="sexo" class="input__padrao" value="{{ resultado[3] }}">
+        </div>
+        <div class="caixa__form">
+            <label for="pai">Pai:</label>
+            <input type="text" id="pai" name="pai" class="input__padrao" value="{{ resultado[4] }}">
+        </div>
+        <div class="caixa__form">
+            <label for="mae">Mãe:</label>
+            <input type="text" id="mae" name="mae" class="input__padrao" value="{{ resultado[5] }}">
+        </div>
+        <div class="caixa__form">
+            <label for="naturalidade">Naturalidade:</label>
+            <input type="text" id="naturalidade" name="naturalidade" class="input__padrao" value="{{ resultado[6] }}">
+        </div>
+        <div class="caixa__estados">
+            <div class="uf">
+                <label for="estados">UF Identidade:</label>
+                <input type="text" id="estados" name="estados" class="input__padrao" value="{{ resultado[7] }}">
+            </div>
+            <div class="pais">
+                <label for="pais">País:</label>
+                <input type="text" id="pais" name="pais" class="input__padrao" value="{{ resultado[8] }}">
+            </div>
+        </div>
+        <span class="titulo__categoria">Endereço</span>
+        <div class="caixa__form">
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" class="input__padrao" value="{{ resultado[9] }}">
+            <p id="erro"></p>
+        </div>
+        <div class="caixa__dupla">
+            <div class="logradouro">
+                <label for="logradouro">Logradouro:</label>
+                <input type="text" id="logradouro" name="logradouro" class="input__padrao" value="{{ resultado[10] }}">
+            </div>
+            <div class="numero">
+                <label for="numero">N°:</label>
+                <input type="number" id="numero" name="numero" class="input__padrao" value="{{ resultado[11] }}">
+            </div>
+        </div>
+        <div class="caixa__form">
+            <label for="complemento" class="nao__obrigatorio">Complemento:</label>
+            <input type="text" class="input__padrao" id="complemento" name="complemento" value="{{ resultado[12] }}">
+        </div>
+        <div class="caixa__form">
+            <label for="bairro">Bairro:</label>
+            <input type="text" id="bairro" name="bairro" class="input__padrao" value="{{ resultado[13] }}">
+        </div>
+        <div class="caixa__estados">
+            <div class="pais">
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" class="input__padrao" value="{{ resultado[14] }}">
+            </div>
+            <div class="uf">
+                <label for="uf">UF Endereço:</label>
+                <input id="uf" name="ufEndereco" class="input__padrao" value="{{ resultado[15] }}">
+            </div>
+        </div>
+        <div class="caixa__form">
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" class="input__padrao" value="{{ resultado[16] }}">
+        </div>
+        <span class="titulo__categoria">Outros Dados</span>
+        <div class="caixa__form">
+            <label for="dataNascimento">Data de Nascimento:</label>
+            <input type="text" id="dataNascimento" name="dataNascimento" class="input__padrao" value="{{ resultado[17] }}">
+          
+        </div>
+        <div class="caixa__form">
+            <label for="estadoCivil">Estado Civil:</label>
+            <input name="estadoCivil" id="estadoCivil" class="input__padrao" value="{{ resultado[18] }}">
+        </div>
+        <div class="caixa__form">
+            <label for="nomeConjuge">Nome do Cônjuge:</label>
+            <input type="text" class="input__padrao" id="nomeConjuge" name="nomeConjuge" value="{{ resultado[19] }}">
+        </div>
+        <div class="caixa__form">
+            <label for="profissao">Profissão:</label>
+            <input type="text" class="input__padrao" id="profissao" name="profissao" value="{{ resultado[20] }}">
+        </div>
+        <div class="caixa__form">
+            <label for="escolaridade">Escolaridade:</label>
+            <input type="text" name="escolaridade" id="escolaridade" class="input__padrao" value="{{ resultado[21] }}">
+        </div>
+        <div class="caixa__form">
+            <label for="dataDeBatismo">Data de Batismo:</label>
+            <input type="text" class="input__padrao" id="dataDeBatismo" name="dataDeBatismo" value="{{ resultado[22] }}">
+        </div>
+        <div class="caixa__form">
+            <label for="batismo">É batizado no espírito santo?</label>
+            <input type="text" name="batismo" id="batismo" class="input__padrao" value="{{ resultado[23] }}" minlength="3" maxlength="3">
+        </div>
+        <div class="caixa__form">
+            <label for="rol">Entrada no ROL de membros:</label>
+            <input type="text" id="rol" name="rol" class="input__padrao" value="{{ resultado[24] }}">
+        </div>
+        <div class="caixa__form">
+            <label for="congregacao">Congregação:</label>
+            <input type="number" id="congregacao" name="congregacao" class="input__padrao" value="{{ resultado[25] }}">
+        </div>
+        <div class="caixa__form">
+            <label for="funcao">Função:</label>
+            <input type="text" name="funcao" id="funcao" class="input__padrao" value="{{ resultado[26] }}">
+        </div>
+        <div class="caixa__form">
+            <label for="origem">Origem:</label>
+            <input type="text" name="origem" id="origem" class="input__padrao" value="{{ resultado[27] }}">
+        </div>
+        <div class="caixa__form">
+            <label for="situacao">Situação:</label>
+            <input type="text" name="situacao" id="situacao" class="input__padrao" value="{{ resultado[28] }}">
+        </div>
+        <div class="caixa__form">
+            <Label for="observacao">De que Igreja e Cidade?</Label>
+            <input name="observacao" id="observacao" class="input__padrao" value="{{ resultado[29] }}">
+        </div>
+        <div class="caixa__dupla--btn">
+            <button class="btn" type="submit">Editar</button>
+            <button class="btn" type="submit">Excluir</button>
+        </div>
+    </div>
+</section>
+{% endfor %}
+{% endif %}
+{% endblock %}

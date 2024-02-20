@@ -1,15 +1,18 @@
 from flask import Flask
-import psycopg2
-
-
-def criar_conexao():
-    conecta = psycopg2.connect(host='localhost', dbname='igreja', user='postgres', password='1234')
-    return conecta
+from flask_sqlalchemy import SQLAlchemy
+from flask_wtf.csrf import CSRFProtect
+from flask_bcrypt import Bcrypt
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
 
+db = SQLAlchemy(app)
+csrf = CSRFProtect(app)
+bcrypt = Bcrypt(app)
+
 from views import *
+from views_user import *
+from views_crud import *
 
 if __name__ == '__main__':
     app.run(debug=True)

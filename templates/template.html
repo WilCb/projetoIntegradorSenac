@@ -27,10 +27,12 @@
             <nav>
                 <a href="{{ url_for('index') }}"><button type="button">Inicial</button></a>
                 <a href="{{ url_for('formulario_de_cadastro') }}"><button type="button">Cadastrar membro</button></a>
-                <a href="{{ url_for('listarMembros') }}"><button type="button">Listar membros</button></a>
-                <a href="{{ url_for('consultarMembro') }}"><button type="button">Consultar membro</button></a>
+                <a href="{{ url_for('lista_de_membros') }}"><button type="button">Listar membros</button></a>
+                <a href="{{ url_for('consultar_membro') }}"><button type="button">Membro</button></a>
+                
                 <a href="#"><button type="button">Grupos</button></a>
                 <a href="#"><button type="button">Configurações</button></a>
+                <a href="{{url_for("logout")}}"><button type="button">Sair</button></a>
             </nav>
         </div>
         <div class="conteudo no-print">
@@ -49,14 +51,12 @@
             {% block conteudo %} {% endblock %}
         </div>
     </section>
-    <footer class="container__footer no-print">
-        <p>&copy; Todos os Direitos Reservados</p>
-    </footer>
 
     <script src="../static/js/preencherEndereco.js"></script>
     <script src="../static/js/liberarEnvio.js"></script>
     <script src="../static/js/salvar_pdf.js"></script>
     <script src="../static/js/validaConsultaMembro.js"></script>
+    <script src="../static/js/formatarData.js"></script>
 </body>
 
 </html>

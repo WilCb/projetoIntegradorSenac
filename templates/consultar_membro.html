@@ -1,198 +1,125 @@
 {% extends 'template.html' %}
 {% block conteudo %}
-<section class="formulario" id="formulario">
+<section class="geral__tabela" id="formulario">
     <h2 class="titulo__form">Dados do membro cadastrado</h2>
-    <form action="{{ url_for('consultarMembro') }}" method="post" class="container__form">
+    <form action="{{url_for("atualizar_membro")}}" method="post" class="container__form">
         <div class="cpf">
-            <label for="buscaPorCpf">CPF:</label>
-            <input type="number" id="buscaPorCpf" name="buscaPorCpf" class="input__padrao">
-            <button type="submit" id="buscarCpf" class="btn" disabled>Buscar</button>
+            {{ form.cpf.label() }}
+            {{ form.cpf(class="input__padrao") }}
+            {{ form.buscar() }}
         </div>
     </form>
-    {% if resultados %}
-    <div class="container__form">
-        {% for resultado in resultados %}
-        <span class="titulo__categoria">Identificação</span>
-        <div class="caixa__form">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" class="input__padrao" value="{{ resultado[0] }}">
-        </div>
-        <div class="caixa__form">
-            <div class="rg">
-                <label for="rg">RG:</label>
-                <input type="text" id="rg" name="rg" class="input__padrao" value="{{ resultado[1] }}">
-            </div>
+    <table class="container__tabela">
+        <th class="titulo__tabela">Dados Pessoais ---------------------------------------------------------------- </th>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Nome</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">RG</td>
+            <td class="lista__tabela">exemplo</td>
+            <th class="titulo__tabela">CPF</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Orgão Expedidor</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Sexo</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Pai</td>
+            <td class="lista__tabela">exemplo</td>
+            <th class="titulo__tabela">Mãe</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Naturalidade</td>
+            <td class="lista__tabela">exemplo</td>
+            <th class="titulo__tabela">UF Nascimento</td>
+            <td class="lista__tabela">exemplo</td>
+            <th class="titulo__tabela">País</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <th class="titulo__tabela">Endereço ---------------------------------------------------------------- </th>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">CEP</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Logradouro</td>
+            <td class="lista__tabela">exemplo</td>
+            <th class="titulo__tabela">Número</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Complemento</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Bairro</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Cidade</td>
+            <td class="lista__tabela">exemplo</td>
+            <th class="titulo__tabela">UF</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Telefone</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <th class="titulo__tabela">Outros Dados ---------------------------------------------------------------- </th>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Data de Nascimento</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Estado Civil</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Nome do conjugê</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Profissão</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Escolaridade</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Data de Batismo</td>
+            <td class="lista__tabela">exemplo</td>
+            <th class="titulo__tabela">Batizado no Espírito Santo</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
 
-        </div>
-
-        <div class="caixa__form">
-            <label for="orgaoExpedidor">Orgão Expedidor:</label>
-            <input type="text" class="input__padrao" id="orgaoExpedidor" name="orgaoExpedidor" value="{{ resultado[2] }}">
-        </div>
-        <div class="caixa__form">
-            <label for="sexo">Sexo:</label>
-            <input type="text" name="sexo" id="sexo" class="input__padrao" value="{{ resultado[3] }}">
-        </div>
-        <div class="caixa__form">
-            <label for="pai">Pai:</label>
-            <input type="text" id="pai" name="pai" class="input__padrao" value="{{ resultado[4] }}">
-        </div>
-        <div class="caixa__form">
-            <label for="mae">Mãe:</label>
-            <input type="text" id="mae" name="mae" class="input__padrao" value="{{ resultado[5] }}">
-        </div>
-        <div class="caixa__form">
-            <label for="naturalidade">Naturalidade:</label>
-            <input type="text" id="naturalidade" name="naturalidade" class="input__padrao" value="{{ resultado[6] }}">
-        </div>
-        <div class="caixa__estados">
-            <div class="uf">
-                <label for="estados">UF Identidade:</label>
-                <input type="text" id="estados" name="estados" class="input__padrao" value="{{ resultado[7] }}">
-            </div>
-            <div class="pais">
-                <label for="pais">País:</label>
-                <input type="text" id="pais" name="pais" class="input__padrao" value="{{ resultado[8] }}">
-            </div>
-        </div>
-        <span class="titulo__categoria">Endereço</span>
-        <div class="caixa__form">
-            <label for="cep">CEP:</label>
-            <input type="text" id="cep" name="cep" class="input__padrao" value="{{ resultado[9] }}">
-            <p id="erro"></p>
-        </div>
-        <div class="caixa__dupla">
-            <div class="logradouro">
-                <label for="logradouro">Logradouro:</label>
-                <input type="text" id="logradouro" name="logradouro" class="input__padrao" value="{{ resultado[10] }}">
-            </div>
-            <div class="numero">
-                <label for="numero">N°:</label>
-                <input type="number" id="numero" name="numero" class="input__padrao" value="{{ resultado[11] }}">
-            </div>
-        </div>
-        <div class="caixa__form">
-            <label for="complemento" class="nao__obrigatorio">Complemento:</label>
-            <input type="text" class="input__padrao" id="complemento" name="complemento" value="{{ resultado[12] }}">
-        </div>
-        <div class="caixa__form">
-            <label for="bairro">Bairro:</label>
-            <input type="text" id="bairro" name="bairro" class="input__padrao" value="{{ resultado[13] }}">
-        </div>
-        <div class="caixa__estados">
-            <div class="pais">
-                <label for="cidade">Cidade:</label>
-                <input type="text" id="cidade" name="cidade" class="input__padrao" value="{{ resultado[14] }}">
-            </div>
-            <div class="uf">
-                <label for="uf">UF Endereço:</label>
-                <input id="uf" name="ufEndereco" class="input__padrao" value="{{ resultado[15] }}">
-            </div>
-        </div>
-        <div class="caixa__form">
-            <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" name="telefone" class="input__padrao" value="{{ resultado[16] }}">
-        </div>
-        <span class="titulo__categoria">Outros Dados</span>
-        <div class="caixa__form">
-            <label for="dataNascimento">Data de Nascimento:</label>
-            <input type="text" id="dataNascimento" name="dataNascimento" class="input__padrao" value="{{ resultado[17] }}">
-          
-        </div>
-        <div class="caixa__form">
-            <label for="estadoCivil">Estado Civil:</label>
-            <select name="estadoCivil" id="estadoCivil" class="input__padrao">
-                <option value="">Selecione</option>
-                <option value="Solteiro">Solteiro</option>
-                <option value="Casado">Casado</option>
-                <option value="Divorciado">Divorciado</option>
-                <option value="Viúvo">Viúvo</option>
-                <option value="Sep. Judicialmente">Sep. Judicialmente</option>
-            </select>
-        </div>
-        <div class="caixa__form">
-            <label for="nomeConjuge">Nome do Cônjuge:</label>
-            <input type="text" class="input__padrao" id="nomeConjuge" name="nomeConjuge">
-        </div>
-        <div class="caixa__form">
-            <label for="profissao">Profissão:</label>
-            <input type="text" class="input__padrao" id="profissao" name="profissao">
-        </div>
-        <div class="caixa__form">
-            <label for="escolaridade">Escolaridade:</label>
-            <select name="escolaridade" id="escolaridade" class="input__padrao">
-                <option value="" selected>Selecione</option>
-                <option value="Analfabeto">Analfabeto</option>
-                <option value="Alfabetizado">Alfabetizado</option>
-                <option value="Primário">Primário</option>
-                <option value="1° Grau">1° Grau</option>
-                <option value="2° Grau">2° Grau</option>
-                <option value="Superior">Superior</option>
-            </select>
-        </div>
-        <div class="caixa__form">
-            <label for="dataDeBatismo">Data de Batismo:</label>
-            <input type="date" class="input__padrao" id="dataDeBatismo" name="dataDeBatismo">
-        </div>
-        <div class="caixa__form">
-            <label for="batismo">É batizado no espírito santo?</label>
-            <select name="batismo" id="batismo" class="input__padrao">
-                <option value="" selected>Selecione</option>
-                <option value="Sim">Sim</option>
-                <option value="Não">Não</option>
-            </select>
-        </div>
-        <div class="caixa__form">
-            <label for="rol">Entrada no ROL de membros:</label>
-            <input type="date" id="rol" name="rol" class="input__padrao">
-        </div>
-        <div class="caixa__form">
-            <label for="congregacao">Congregação:</label>
-            <input type="text" id="congregacao" name="congregacao" class="input__padrao">
-        </div>
-        <div class="caixa__form">
-            <label for="funcao">Função:</label>
-            <select name="funcao" id="funcao" class="input__padrao">
-                <option value="">Selecione</option>
-                <option value="PASTOR">PASTOR</option>
-                <option value="EVANGELISTA">EVANGELISTA</option>
-                <option value="PRESBÍTERIO">PRESBÍTERIO</option>
-                <option value="DIÁCONO">DIÁCONO</option>
-                <option value="AUXILIAR">AUXILIAR</option>
-                <option value="MEMBRO">MEMBRO</option>
-            </select>
-        </div>
-        <div class="caixa__form">
-            <label for="origem">Origem:</label>
-            <select name="origem" id="origem" class="input__padrao">
-                <option value="">Selecione</option>
-                <option value="PASTOR">BATISMO</option>
-                <option value="EVANGELISTA">TRANFERÊNCIA</option>
-                <option value="PRESBÍTERIO">PRESBÍTERIO</option>
-                <option value="DIÁCONO">ACLAMAÇÃO</option>
-                <option value="AUXILIAR">CONGREGAÇÃO</option>
-            </select>
-        </div>
-        <div class="caixa__form">
-            <label for="situacao">Situação:</label>
-            <select name="situacao" id="situacao" class="input__padrao">
-                <option value="">Selecione</option>
-                <option value="PASTOR">ATIVO</option>
-                <option value="EVANGELISTA">DISCIPLINADO</option>
-                <option value="PRESBÍTERIO">TRANSFERIDO</option>
-                <option value="DIÁCONO">FALECIDO</option>
-                <option value="AUXILIAR">CAND. BATISMO</option>
-                <option value="DESVIADO">DESVIADO</option>
-                <option value="CONGREGADO">CONGREGADO</option>
-                <option value="DESCONHECIDO">DESCONHECIDO</option>
-            </select>
-        </div>
-        <div class="caixa__form">
-            <Label for="observacao">De que Igreja e Cidade?</Label>
-            <textarea name="observacao" id="observacao" cols="30" rows="10" class="input__padrao"></textarea>
-        </div>
-    </div>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Entrada no ROL</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Congregação</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Função</td>
+            <td class="lista__tabela">exemplo</td>
+            <th class="titulo__tabela">Origem</td>
+            <td class="lista__tabela">exemplo</td>
+            <th class="titulo__tabela">Situação</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">De qual igreja?</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+    </table>
 </section>
-{% endfor %}
-{% endif %}
 {% endblock %}

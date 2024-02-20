@@ -1,16 +1,16 @@
 async function buscaEndereco(cep) {
-    var mensagemErro = document.getElementById('erro');
+    const mensagemErro = document.getElementById('erro');
     mensagemErro.innerHTML = '';
     try {
-        var consultaCEP = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-        var consultaCEPConvertida = await consultaCEP.json();
+        let consultaCEP = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+        let consultaCEPConvertida = await consultaCEP.json();
         if (consultaCEPConvertida.erro) {
             throw Error('CEP não existente!');
         }
-        var cidade = document.getElementById('cidade');
-        var logradouro = document.getElementById('logradouro');
-        var estado = document.getElementById('estados');
-        var bairro = document.getElementById('bairro')
+        let cidade = document.getElementById('cidade');
+        let logradouro = document.getElementById('logradouro');
+        let estado = document.getElementById('ufEndereco');
+        let bairro = document.getElementById('bairro')
 
         cidade.value = consultaCEPConvertida.localidade;
         logradouro.value = consultaCEPConvertida.logradouro;
@@ -24,5 +24,5 @@ async function buscaEndereco(cep) {
     }
 }
 
-var cep = document.getElementById('cep');
+const cep = document.getElementById('cep');
 cep.addEventListener('focusout', () => buscaEndereco(cep.value));

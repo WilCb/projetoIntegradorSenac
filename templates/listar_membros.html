@@ -1,35 +1,32 @@
 {% extends 'template.html' %}
 {% block conteudo %}
 <section class="geral__tabela">
-    <h2 class="titulo__pagina">Listar membros</h2>
-    <form action="{{ url_for('listarMembros') }}" method="post">
-        <input type="text" name="filtro" value="*" hidden>
-        <button type="submit">Gerar lista</button>
-    </form>
-    {% if resultados %}
-    <table class="container__tabela print">
-        <tr class="titulos__tabela">
-          <th class="titulo__tabela">Nome</th>
-          <th class="titulo__tabela">RG</th>
-          <th class="titulo__tabela">CPF</th>
-          <th class="titulo__tabela">Org. expedidor</th>
-          <th class="titulo__tabela">Pai</th>
-          <th class="titulo__tabela">Mãe</th>
-        </tr>
-        {% for resultado in resultados %}
-        <tr class="conteudo__tabela-lista">
-          <td class="lista__tabela">{{ resultado[0] }}</td>
-          <td class="lista__tabela">{{ resultado[1] }}</td>
-          <td class="lista__tabela">{{ resultado[2] }}</td>
-          <td class="lista__tabela">{{ resultado[3] }}</td>
-          <td class="lista__tabela">{{ resultado[4] }}</td>
-          <td class="lista__tabela">{{ resultado[5] }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-    {% endif %}
-    
-    <button class="btn" id="btnPdf" ondblclick="">Salvar</button>
+  <h2 class="titulo__pagina">Membros cadastrados</h2>
+  <table class="container__tabela print">
+    <tr class="titulos__tabela">
+      <th class="titulo__tabela">Nome</th>
+      <th class="titulo__tabela">RG</th>
+      <th class="titulo__tabela">CPF</th>
+      <th class="titulo__tabela">Org. expedidor</th>
+      <th class="titulo__tabela">Pai</th>
+      <th class="titulo__tabela">Mãe</th>
+    </tr>
+    {% for membro in membros %}
+    <tr class="conteudo__tabela-lista">
+      <td class="lista__tabela">{{ membro.nome }}</td>
+      <td class="lista__tabela">{{ membro.rg }}</td>
+      <td class="lista__tabela">{{ membro.cpf }}</td>
+      <td class="lista__tabela">{{ membro.orgao_expedidor }}</td>
+      <td class="lista__tabela">{{ membro.pai }}</td>
+      <td class="lista__tabela">{{ membro.mae }}</td>
+      <td class="no-print">
+        <a href="{{url_for('editar', id=membro.id)}}">Editar</a>
+        <a href="{{url_for('deletar', id=membro.id)}}">Deletar</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <button class="btn" id="btnPdf" ondblclick="">Salvar</button>
 </section>
 
 {% endblock %}

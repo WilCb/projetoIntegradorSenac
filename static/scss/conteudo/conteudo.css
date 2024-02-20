@@ -1,9 +1,4 @@
 .conteudo {
-  background-color: #F8F9FA;
-  background-image: url(/static/img/fundo_body.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   width: 100%;

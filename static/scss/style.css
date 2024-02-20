@@ -6,11 +6,6 @@ body {
 }
 
 .conteudo {
-  background-color: #F8F9FA;
-  background-image: url(/static/img/fundo_body.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -176,10 +171,13 @@ body {
 .formulario .container__form .numero .nao__obrigatorio::before {
   content: "";
 }
-.formulario .container__form .caixa__dupla {
+.formulario .container__form .caixa__dupla, .formulario .container__form .caixa__dupla--btn {
   display: flex;
   gap: 10px;
   justify-content: space-between;
+}
+.formulario .container__form .caixa__dupla--btn {
+  justify-content: center;
 }
 .formulario .container__form .logradouro {
   width: 80%;

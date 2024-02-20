@@ -77,10 +77,13 @@
 .formulario .container__form .numero .nao__obrigatorio::before {
   content: "";
 }
-.formulario .container__form .caixa__dupla {
+.formulario .container__form .caixa__dupla, .formulario .container__form .caixa__dupla--btn {
   display: flex;
   gap: 10px;
   justify-content: space-between;
+}
+.formulario .container__form .caixa__dupla--btn {
+  justify-content: center;
 }
 .formulario .container__form .logradouro {
   width: 80%;

@@ -77,6 +77,11 @@
             justify-content: space-between;
         }
 
+        .caixa__dupla--btn {
+            @extend .caixa__dupla;
+            justify-content: center;
+        }
+
         .cpf,
         .rg,
         .logradouro,
@@ -124,5 +129,7 @@
                 background-color: v.$cor-primaria;
             }
         }
+
+
     }
 }
