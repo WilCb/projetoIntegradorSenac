@@ -1,9 +1,6 @@
 {% extends 'template.html' %}
 {% block conteudo %}
 <section class="formulario" id="formulario">
-    <div class="barra__progresso">
-        <img src="../static/img/progresso25.png" alt="Barra de progresso iniciando em 25%">
-    </div>
     <h2 class="titulo__form">Formulário de cadastro</h2>
     <form action="{{ url_for('cadastrar_no_banco') }}" method="post" class="container__form">
         <span class="titulo__categoria">Identificação</span>
@@ -19,7 +16,7 @@
             </div>
             <div class="cpf">
                 {{ form.cpf.label() }}
-                {{ form.cpf(class="input__padrao", id="cpf") }}
+                {{ form.cpf(class="input__padrao", id="cpf", oninput="mascara(this)") }}
             </div>
             <p>{{ p }}</p>
         </div>
@@ -182,10 +179,7 @@
         </div>
         <div>
             {{ form.cadastrar(class="btn") }}
-        </div>
-
-                    
-                    
+        </div>   
     </form>
 </section>
 

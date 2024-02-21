@@ -1,10 +1,12 @@
 @use '../variaveis/variaveis.scss' as v;
 
 .formulario {
-    display: flex;
+    
+    
+    display:flex;
     flex-direction: column;
-    margin-top: 120px;
-    padding: 40px 20px;
+    margin-top: 10px;
+    padding: 20px 20px;
 
     .barra__progresso {
         display: flex;
@@ -29,13 +31,13 @@
     }
 
     .container__form {
-        align-self: center;
+        align-self:center;
         background-color:none;
        /*  box-shadow: 20px 20px 20px v.$cor-secundaria; */
         display: flex;
         flex-direction: column;
         gap: 10px;
-        padding: 40px 20px;
+        padding: 10px 20px;
         width: 434px;
 
         // .nao__obrigatorio::before {
@@ -75,11 +77,6 @@
             display: flex;
             gap: 10px;
             justify-content: space-between;
-        }
-
-        .caixa__dupla--btn {
-            @extend .caixa__dupla;
-            justify-content: center;
         }
 
         .cpf,
@@ -129,7 +126,5 @@
                 background-color: v.$cor-primaria;
             }
         }
-
-
     }
 }

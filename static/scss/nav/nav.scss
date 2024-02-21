@@ -7,43 +7,63 @@
     gap: 60px;
     flex-direction: column;
     min-height: 900px;
-    padding: 20px;
+    /* padding: 20px; */
     position: relative;
     top: 0;
     min-height: 80rem;
     min-width: 17rem;
-    box-shadow: 9px 2px 5px -1px rgba(10,10,10,0.46);
-    -webkit-box-shadow: 9px 2px 5px -1px rgba(10,10,10,0.46);
-    -moz-box-shadow: 9px 2px 5px -1px rgba(10,10,10,0.46);
+    box-shadow: 4px -2px 5px 2px rgba(26, 19, 28, 0.56);
+    -webkit-box-shadow: 4px -2px 5px 2px rgba(26, 19, 28, 0.56);
+    -moz-box-shadow: 4px -2px 5px 2px rgba(26, 19, 28, 0.56);
 
-    .img {
+    /*    .img {
         width: 260px;
         height: 60px;
         background-color: lightgray;
+    } */
+    .logo {
+        height: 150px;
+        position: fixed;
     }
 
     nav {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
         position: fixed;
-        top: 150px;
-        margin-top: 40px;
+        top: 100px;
+        margin-top: 60px;
 
         a {
-            button {
-                color: #ffffff;
-                background-color: v.$cor-botao-nav;
-                width: 200px;
-                padding: 20px 0;
-                border-radius: 10px;
-                border: none;
-                cursor: pointer;
-                transition: 0.5s;
-                &:hover {
-                    background: v.$cor-sombra-botao;
-                }
+            text-decoration: none;
+
+
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            color: #ffffff;
+            background-color: v.$cor-botao-nav;
+            min-width: 14rem;
+            min-height: 4rem;
+            padding: 5px 0;
+            border-radius: 10px;
+            box-shadow: 0px 5px 6px 0px #000000;
+            cursor: pointer;
+            transition: 0.5s;
+
+            &:hover {
+                background: v.$cor-sombra-botao;
             }
+
+            img {
+                padding: 0.75rem;
+                width: 1.7rem;
+                position: absolute;
+                left: 3px
+            }
+
+
 
         }
     }

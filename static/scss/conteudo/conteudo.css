@@ -1,4 +1,8 @@
 .conteudo {
+  background-color: #EEEEEE;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   width: 100%;

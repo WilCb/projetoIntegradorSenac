@@ -24,7 +24,7 @@ TABLES['Cadastro'] = ('''
         ID serial PRIMARY KEY,
         nome character(70) NOT NULL,
         rg numeric(11) NOT NULL,
-        cpf numeric(11) NOT NULL,
+        cpf varchar(11) NOT NULL,
         orgao_expedidor character(20) NOT NULL,
         sexo character(10) NOT NULL,
         pai character(70) NOT NULL,

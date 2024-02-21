@@ -1,6 +1,6 @@
 from flask import session, url_for, render_template, request, redirect, flash
 from app import app, db
-from helpers import FormularioCadastro, BuscarMembro
+from helpers import FormularioCadastro
 from models import Cadastro
 
 @app.route('/formulario-de-cadastro')
@@ -17,7 +17,7 @@ def cadastrar_no_banco():
     if not form.validate_on_submit():
         nome=form.nome.data
         rg=form.rg.data
-        cpf=form.cpf.data
+        cpf=form.cpf.data.replace('.', '').replace('-', '')
         orgao_expedidor=form.orgao_expedidor.data
         sexo=form.sexo.data
         pai=form.pai.data
@@ -103,13 +103,12 @@ def cadastrado():
 @app.route('/lista-de-membros')
 def lista_de_membros():
     lista = Cadastro.query.order_by(Cadastro.cpf)
-    
     return render_template('listar_membros.html', membros=lista)
 
 @app.route('/deletar/<int:id>')
 def deletar(id):
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
-        return redirect(url_for('login', proxima=url_for('formulario_de_cadastro')))
+        return redirect(url_for('login', proxima=url_for('lista_de_membros')))
     Cadastro.query.filter_by(id=id).delete()
     db.session.commit()
 
@@ -118,31 +117,31 @@ def deletar(id):
 @app.route('/editar/<int:id>')
 def editar(id):
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
-        return redirect(url_for('login', proxima=url_for('formulario_de_cadastro')))
+        return redirect(url_for('login', proxima=url_for('editar', id=id)))
     membro = Cadastro.query.filter_by(id=id).first()
     form = FormularioCadastro()
-    form.nome.data = membro.nome
+    form.nome.data = membro.nome.strip()
     form.rg.data = membro.rg
     form.cpf.data = membro.cpf
-    form.orgao_expedidor.data = membro.orgao_expedidor
+    form.orgao_expedidor.data = membro.orgao_expedidor.strip()
     form.sexo.data = membro.sexo
-    form.pai.data = membro.pai
-    form.mae.data = membro.mae
-    form.naturalidade.data = membro.naturalidade
+    form.pai.data = membro.pai.strip()
+    form.mae.data = membro.mae.strip()
+    form.naturalidade.data = membro.naturalidade.strip()
     form.ufIdentidade.data = membro.uf_identidade
-    form.pais.data = membro.pais
+    form.pais.data = membro.pais.strip()
     form.cep.data = membro.cep
-    form.logradouro.data = membro.logradouro
+    form.logradouro.data = membro.logradouro.strip()
     form.numero.data = membro.numero
-    form.complemento.data = membro.complemento
-    form.bairro.data = membro.bairro
-    form.cidade.data = membro.cidade
+    form.complemento.data = membro.complemento.strip()
+    form.bairro.data = membro.bairro.strip()
+    form.cidade.data = membro.cidade.strip()
     form.ufEndereco.data = membro.uf_endereco
     form.telefone.data = membro.telefone
     form.dataNascimento.data = membro.data_nascimento
     form.estadoCivil.data = membro.estado_civil
-    form.nomeConjuge.data = membro.nome_conjuge
-    form.profissao.data = membro.profissao
+    form.nomeConjuge.data = membro.nome_conjuge.strip()
+    form.profissao.data = membro.profissao.strip()
     form.escolaridade.data = membro.escolaridade
     form.dataDeBatismo.data = membro.data_batismo
     form.batizado.data = membro.batizado_esp_santo
@@ -152,7 +151,6 @@ def editar(id):
     form.origem.data = membro.origem
     form.situacao.data = membro.situacao
     form.observacao.data = membro.igreja_cidade
-
     return render_template('editar.html', id=id, form=form)
 
 @app.route('/atualizar-membro', methods=['POST',])
@@ -197,10 +195,69 @@ def atualizar_membro():
 
     return redirect(url_for('lista_de_membros'))
 
+
 @app.route('/consultar-membro')
 def consultar_membro():
-    form = BuscarMembro()
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
-        return redirect(url_for('login', proxima=url_for('formulario_de_cadastro')))   
-    lista = Cadastro.query.order_by(Cadastro.cpf)
+        return redirect(url_for('login', proxima=url_for('formulario_de_cadastro')))
+    form = FormularioCadastro()
     return render_template('consultar_membro.html', form=form)
+
+@app.route("/receber_dados", methods=['POST',])
+def receber_dados():
+    try:
+        form = FormularioCadastro(request.form)
+        membro = Cadastro.query.filter_by(cpf=request.form['cpf']).first()
+        form.nome.data = membro.nome
+        form.rg.data = membro.rg
+
+        if membro.cpf:
+            cpf_str = str(membro.cpf)
+            cpf_formatado = f'{cpf_str[:3]}.{cpf_str[3:6]}.{cpf_str[6:9]}-{cpf_str[9:]}'
+            form.cpf.data = cpf_formatado
+
+        form.orgao_expedidor.data = membro.orgao_expedidor.strip()
+        form.sexo.data = membro.sexo
+        form.pai.data = membro.pai.strip()
+        form.mae.data = membro.mae.strip()
+        form.naturalidade.data = membro.naturalidade.strip()
+        form.ufIdentidade.data = membro.uf_identidade
+        form.pais.data = membro.pais.strip()
+
+        if membro.cep:
+            cep_str = str(membro.cep)
+            cep_formatado = f'{cep_str[:5]}-{cep_str[5:]}'
+            form.cep.data = cep_formatado
+
+        form.logradouro.data = membro.logradouro.strip()
+        form.numero.data = membro.numero
+        form.complemento.data = membro.complemento.strip()
+        form.bairro.data = membro.bairro.strip()
+        form.cidade.data = membro.cidade.strip()
+        form.ufEndereco.data = membro.uf_endereco
+
+        if membro.telefone:
+            tel_str = str(membro.telefone)
+            tel_formatado = f'({tel_str[:2]}) {tel_str[2:7]}-{tel_str[7:]}'
+            form.telefone.data = tel_formatado
+
+        form.dataNascimento.data = membro.data_nascimento.strftime('%d/%m/%Y')
+        form.estadoCivil.data = membro.estado_civil
+        form.nomeConjuge.data = membro.nome_conjuge.strip()
+        form.profissao.data = membro.profissao.strip()
+        form.escolaridade.data = membro.escolaridade
+        if membro.data_batismo:
+            form.dataDeBatismo.data = membro.data_batismo.strftime('%d/%m/%Y')
+        form.batizado.data = membro.batizado_esp_santo
+        if membro.entrada_rol_membros:
+            form.entradaRol.data = membro.entrada_rol_membros.strftime('%d/%m/%Y')
+        form.congregacao.data = membro.congregacao
+        form.funcao.data = membro.funcao
+        form.origem.data = membro.origem
+        form.situacao.data = membro.situacao
+        form.observacao.data = membro.igreja_cidade
+
+        return render_template('consultar_membro.html', form=form)
+    except AttributeError:
+        flash(f'CPF Inválido ou não cadastrado ! ')
+        return redirect(url_for('consultar_membro'))

@@ -1,6 +1,6 @@
 .container__header {
   align-items: center;
-  background-color: #F8F9FA;
+  background-color: #952CAE;
   display: flex;
   height: 50px;
   justify-content: space-between;
@@ -15,7 +15,7 @@
    */
 }
 .container__header .container__img {
-  margin-left: 70px;
+  margin-left: 55px;
 }
 .container__header .titulo {
   width: 100%;
@@ -27,7 +27,4 @@
   display: flex;
   align-items: center;
   gap: 16px;
-}
-.container__header #img {
-  padding-left: 50px;
 }/*# sourceMappingURL=header.css.map */

@@ -5,7 +5,7 @@
         <img src="../static/img/progresso25.png" alt="Barra de progresso iniciando em 25%">
     </div>
     <h2 class="titulo__form">Formulário de cadastro</h2>
-    <form action="{{url_for("atualizar_membro")}}" method="post" class="container__form">
+    <form action="{{ url_for('atualizar_membro') }}" method="post" class="container__form">
         <input type="hidden" name="id" value="{{ id }}">
         <span class="titulo__categoria">Identificação</span>
         {{ form.csrf_token() }}

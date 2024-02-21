@@ -12,16 +12,20 @@ def login():
 
 @app.route('/autenticar', methods=['POST',])
 def autenticar():
-    form = FormularioUsuario(request.form)
-    usuario = Usuarios.query.filter_by(nome=form.nome.data).first()
-    senha = check_password_hash(usuario.senha, form.senha.data)
-    if usuario and senha:
-        session['usuario_logado'] = usuario.nome
-        proxima_pagina = request.form['proxima']
-        return redirect(proxima_pagina)
-    else:
-        flash('Usuário não logado.')
-        return redirect(url_for('login'))
+    try:
+        form = FormularioUsuario(request.form)
+        usuario = Usuarios.query.filter_by(nome=form.nome.data).first()
+        senha = check_password_hash(usuario.senha, form.senha.data)
+        if usuario and senha:
+            session['usuario_logado'] = usuario.nome
+            proxima_pagina = request.form['proxima']
+            return redirect(proxima_pagina)
+        else:
+            flash('Usuário não logado.')
+            return redirect(url_for('login'))
+    except AttributeError:
+        flash('Acesso inválido !')
+        return redirect(url_for('index'))
 
 @app.route('/logout')
 def logout():

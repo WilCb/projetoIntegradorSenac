@@ -4,7 +4,7 @@ class Cadastro(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(70), nullable=False)
     rg = db.Column(db.BigInteger, nullable=False)
-    cpf = db.Column(db.BigInteger, nullable=False)
+    cpf = db.Column(db.String(11), nullable=False)
     orgao_expedidor = db.Column(db.String(20), nullable=False)
     sexo = db.Column(db.String(10), nullable=False)
     pai = db.Column(db.String(70), nullable=False)
@@ -44,3 +44,34 @@ class Usuarios(db.Model):
 
     def __repr__(self):
         return '<Name %r>' % self.name
+    
+class Cpf:
+    def __init__(self, documento):
+        documento = str(documento)
+        if self.cpf_eh_Valido(documento):
+            self.cpf = documento
+        else:
+            raise ValueError("CPF inválido!")
+
+    def __str__(self):
+        return self.format_cpf()
+
+    def cpf_eh_Valido(self, documento):
+        if len(documento) == 11:
+            return True
+        else:
+            return False
+
+    def format_cpf(self):
+        fatia_um = self.cpf[:3]
+        fatia_dois = self.cpf[3:6]
+        fatia_tres = self.cpf[6:9]
+        fatia_quatro = self.cpf[9:]
+        return(
+            "{}.{}.{}-{}".format(
+                fatia_um,
+                fatia_dois,
+                fatia_tres,
+                fatia_quatro
+            )
+        )

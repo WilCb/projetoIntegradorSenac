@@ -14,49 +14,38 @@
 
 <body>
     <section class="geral">
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul id="messages" class="list-unstyled">
-            {% for message in messages %}
-            <li class="alert alert-success">{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
         <div class="container__nav no-print">
+            <img class="logo" src="../static/img/logo.png" alt="">
             <nav>
-                <a href="{{ url_for('index') }}"><button type="button">Inicial</button></a>
-                <a href="{{ url_for('formulario_de_cadastro') }}"><button type="button">Cadastrar membro</button></a>
-                <a href="{{ url_for('lista_de_membros') }}"><button type="button">Listar membros</button></a>
-                <a href="{{ url_for('consultar_membro') }}"><button type="button">Membro</button></a>
-                
-                <a href="#"><button type="button">Grupos</button></a>
-                <a href="#"><button type="button">Configurações</button></a>
-                <a href="{{url_for("logout")}}"><button type="button">Sair</button></a>
+                <a href="{{ url_for('index') }}"><img src="../static/img/house-fill.svg"
+                            alt="Imagem de uma casa na cor branca">Início</a>
+                <a href="{{ url_for('formulario_de_cadastro') }}"><img
+                            src="../static/img/person-fill-add.svg" alt="imagem de um boneco com um sinal de mais">Cadastrar</a>
+                <a href="{{ url_for('lista_de_membros') }}"><img src="../static/img/listar.svg"
+                            alt="Imagem de uma prancheta">Lista</a>
+                <a href="{{ url_for('consultar_membro') }}"><img src="../static/img/bx-search-alt.svg" alt="">Membro</a>
+                <a href="{{url_for('logout')}}"><img src="../static/img/saida.svg"
+                            alt="">Sair</a>
             </nav>
         </div>
+
         <div class="conteudo no-print">
-            <div class="container__header">
-                <div class="container__img">
-                    <img class="logo" src="../static/img/sgmad-removebg-preview.png" alt="">
-                </div>
-                <div class="titulo">
-                    <h1>Sistema de Gerenciamento</h1>
-                </div>
-                <div class="icones">
-                    <img src="../static/img/Dark.png" alt="Icone de uma lua que altera para o modo escuro">
-                    <img src="../static/img/Notificação.png" alt="Icone de um sino para notificação sobre avisos">
-                </div>
-            </div>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul id="messages" class="list-unstyled">
+                {% for message in messages %}
+                <li class="alert alert-success">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
             {% block conteudo %} {% endblock %}
         </div>
     </section>
 
     <script src="../static/js/preencherEndereco.js"></script>
-    <script src="../static/js/liberarEnvio.js"></script>
     <script src="../static/js/salvar_pdf.js"></script>
-    <script src="../static/js/validaConsultaMembro.js"></script>
-    <script src="../static/js/formatarData.js"></script>
+    <script src="../static/js/mascara_cpf.js"></script>
 </body>
 
 </html>

@@ -20,13 +20,13 @@
       <td class="lista__tabela">{{ membro.pai }}</td>
       <td class="lista__tabela">{{ membro.mae }}</td>
       <td class="no-print">
-        <a href="{{url_for('editar', id=membro.id)}}">Editar</a>
-        <a href="{{url_for('deletar', id=membro.id)}}">Deletar</a>
+        <a href="{{ url_for('editar', id=membro.id) }}">Editar</a>
+        <a href="{{ url_for('deletar', id=membro.id) }}">Deletar</a>
       </td>
     </tr>
     {% endfor %}
   </table>
-  <button class="btn" id="btnPdf" ondblclick="">Salvar</button>
+  <button class="btn" id="btnPdf">Salvar</button>
 </section>
 
 {% endblock %}
