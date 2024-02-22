@@ -2,7 +2,20 @@
 {% block conteudo %}
 
 <section class="geral__tabela">
-    <p> Total de membros cadastrados: {{ contagem }}</p>
+    <div>
+        <p> Total de membros cadastrados: {{ total_de_membros }}</p>
+    </div>
+
+    <div>
+        <span> {{ data_atual }}</span>
+        <table>
+            <th>Aniversariantes do mês {{ mes }}</th>
+            {% for i in mes_aniversario %}
+            <td>{{ aniversariante }}</td>
+            {% endfor %}
+
+        </table>
+    </div>
 </section>
 
 

@@ -23,7 +23,7 @@ TABLES['Cadastro'] = ('''
     CREATE TABLE IF NOT EXISTS cadastro (
         ID serial PRIMARY KEY,
         nome character(70) NOT NULL,
-        rg numeric(11) NOT NULL,
+        rg varchar(11) NOT NULL,
         cpf varchar(11) NOT NULL,
         orgao_expedidor character(20) NOT NULL,
         sexo character(10) NOT NULL,
@@ -32,7 +32,7 @@ TABLES['Cadastro'] = ('''
         naturalidade character(70) NOT NULL,
         uf_identidade character(30) NOT NULL,
         pais text NOT NULL,
-        cep numeric(11) NOT NULL,
+        cep varchar(8) NOT NULL,
         logradouro character(70) NOT NULL,
         numero numeric(5) NOT NULL,
         complemento character(25),

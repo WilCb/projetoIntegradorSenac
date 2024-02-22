@@ -25,14 +25,14 @@ def cadastrar_no_banco():
         naturalidade=form.naturalidade.data
         uf_identidade=form.ufIdentidade.data
         pais=form.pais.data
-        cep=form.cep.data
+        cep=form.cep.data.replace('-', '')
         logradouro=form.logradouro.data
         numero=form.numero.data
         complemento=form.complemento.data
         bairro=form.bairro.data
         cidade=form.cidade.data
         uf_endereco=form.ufEndereco.data
-        telefone=form.telefone.data
+        telefone=form.telefone.data.replace('(', '').replace(')', '').replace('-', '').replace(' ', '')
         data_nascimento=form.dataNascimento.data
         estado_civil=form.estadoCivil.data
         nome_conjuge=form.nomeConjuge.data
@@ -156,42 +156,41 @@ def editar(id):
 @app.route('/atualizar-membro', methods=['POST',])
 def atualizar_membro():
     form = FormularioCadastro(request.form)
-    if form.validate_on_submit():
-        membro = Cadastro.query.filter_by(id=request.form['id']).first()
-        membro.nome = form.nome.data
-        membro.rg = form.rg.data
-        membro.cpf = form.cpf.data
-        membro.orgao_expedidor = form.orgao_expedidor.data
-        membro.sexo = form.sexo.data
-        membro.pai = form.pai.data
-        membro.mae = form.mae.data
-        membro.naturalidade = form.naturalidade.data
-        membro.uf_identidade = form.ufIdentidade.data
-        membro.pais = form.pais.data
-        membro.cep = form.cep.data
-        membro.logradouro = form.logradouro.data
-        membro.numero = form.numero.data
-        membro.complemento = form.complemento.data
-        membro.bairro = form.bairro.data
-        membro.cidade = form.cidade.data
-        membro.uf_endereco = form.ufEndereco.data
-        membro.telefone = form.telefone.data
-        membro.data_nascimento = form.dataNascimento.data
-        membro.estado_civil = form.estadoCivil.data
-        membro.nome_conjuge = form.nomeConjuge.data
-        membro.profissao = form.profissao.data
-        membro.escolaridade = form.escolaridade.data
-        membro.data_batismo = form.dataDeBatismo.data
-        membro.batizado_esp_santo = form.batizado.data
-        membro.entrada_rol_membros = form.entradaRol.data
-        membro.congregacao = form.congregacao.data
-        membro.funcao = form.funcao.data
-        membro.origem = form.origem.data
-        membro.situacao = form.situacao.data
-        membro.igreja_cidade = form.observacao.data
+    membro = Cadastro.query.filter_by(id=request.form['id']).first()
+    membro.nome = form.nome.data
+    membro.rg = form.rg.data
+    membro.cpf = form.cpf.data.replace('.', '').replace('-', '')
+    membro.orgao_expedidor = form.orgao_expedidor.data
+    membro.sexo = form.sexo.data
+    membro.pai = form.pai.data
+    membro.mae = form.mae.data
+    membro.naturalidade = form.naturalidade.data
+    membro.uf_identidade = form.ufIdentidade.data
+    membro.pais = form.pais.data
+    membro.cep = form.cep.data.replace('-', '')
+    membro.logradouro = form.logradouro.data
+    membro.numero = form.numero.data
+    membro.complemento = form.complemento.data
+    membro.bairro = form.bairro.data
+    membro.cidade = form.cidade.data
+    membro.uf_endereco = form.ufEndereco.data
+    membro.telefone = form.telefone.data
+    membro.data_nascimento = form.dataNascimento.data
+    membro.estado_civil = form.estadoCivil.data
+    membro.nome_conjuge = form.nomeConjuge.data
+    membro.profissao = form.profissao.data
+    membro.escolaridade = form.escolaridade.data
+    membro.data_batismo = form.dataDeBatismo.data
+    membro.batizado_esp_santo = form.batizado.data
+    membro.entrada_rol_membros = form.entradaRol.data
+    membro.congregacao = form.congregacao.data
+    membro.funcao = form.funcao.data
+    membro.origem = form.origem.data
+    membro.situacao = form.situacao.data
+    membro.igreja_cidade = form.observacao.data
 
-        db.session.add(membro)
-        db.session.commit()
+    db.session.add(membro)
+    db.session.commit()
 
     return redirect(url_for('lista_de_membros'))
 
@@ -207,7 +206,7 @@ def consultar_membro():
 def receber_dados():
     try:
         form = FormularioCadastro(request.form)
-        membro = Cadastro.query.filter_by(cpf=request.form['cpf']).first()
+        membro = Cadastro.query.filter_by(cpf=request.form['cpf'].replace('.', '').replace('-', '')).first()
         form.nome.data = membro.nome
         form.rg.data = membro.rg
 

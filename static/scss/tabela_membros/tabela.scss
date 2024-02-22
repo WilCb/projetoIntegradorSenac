@@ -21,6 +21,9 @@
         .titulos__tabela {
             .titulo__tabela {
                 border: 1px solid;
+                &:hover {
+                    background-color: #CCCCCC;
+                }
             }
         }
 

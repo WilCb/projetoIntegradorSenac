@@ -19,6 +19,9 @@
 .geral__tabela .container__tabela .titulos__tabela .titulo__tabela {
   border: 1px solid;
 }
+.geral__tabela .container__tabela .titulos__tabela .titulo__tabela:hover {
+  background-color: #CCCCCC;
+}
 .geral__tabela .container__tabela .conteudo__tabela-lista .lista__tabela {
   font-size: 12px;
   border: 1px solid;

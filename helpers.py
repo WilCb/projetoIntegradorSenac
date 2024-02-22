@@ -1,13 +1,12 @@
 from flask_wtf import FlaskForm
-from flask_wtf.form import _Auto
 from wtforms import StringField, PasswordField, SubmitField, validators, SelectField, IntegerField, DateField, TelField, TextAreaField, ValidationError
 
 from config import sexo_lista, uf_lista, estado_civil_lista, escolaridade_lista, confirm_lista, funcao_lista, origem_lista, situacao_lista
 
 class FormularioCadastro(FlaskForm):
     nome = StringField('Nome', [validators.DataRequired(), validators.Length(min=3, max=70)])
-    rg = IntegerField('RG', [validators.DataRequired()])
-    cpf = StringField('CPF', [validators.DataRequired(), validators.Length(max=11)])
+    rg = StringField('RG', [validators.DataRequired(), validators.Length(max=11)])
+    cpf = StringField('CPF', [validators.DataRequired(), validators.Length(min=11, max=11)])
     orgao_expedidor = StringField('Orgão Expedidor', [validators.DataRequired(), validators.Length(min=3, max=20)])
     sexo = SelectField('Função', [validators.DataRequired()], choices=sexo_lista(), default='')
     pai = StringField('Pai', [validators.DataRequired(), validators.Length(min=3, max=70)])
@@ -15,14 +14,14 @@ class FormularioCadastro(FlaskForm):
     naturalidade = StringField('Naturalidade', [validators.DataRequired(), validators.Length(min=3, max=70)])
     ufIdentidade = SelectField('UF Identidade', [validators.DataRequired()], choices=uf_lista(), default='')
     pais = StringField('País', [validators.DataRequired(), validators.Length(min=2, max=50)])
-    cep = IntegerField('CEP', [validators.DataRequired()])
+    cep = StringField('CEP', [validators.DataRequired(), validators.Length(min=8, max=8)])
     logradouro = StringField('Logradouro', [validators.DataRequired(), validators.Length(min=1, max=100)])
     numero = IntegerField('N: ', [validators.DataRequired()])
-    complemento = StringField('Complemento', [validators.Length(max=100)])
+    complemento = StringField('Complemento', [validators.Length(max=50)])
     bairro = StringField('Bairro', [validators.DataRequired(), validators.Length(min=1, max=100)])
     cidade = StringField('Cidade', [validators.DataRequired(), validators.Length(min=1, max=50)])
     ufEndereco = SelectField('UF', [validators.DataRequired()], choices=uf_lista(), default='')
-    telefone = TelField('Telefone', [validators.DataRequired(), validators.Length(min=1, max=13)])
+    telefone = TelField('Telefone', [validators.DataRequired(), validators.Length(min=11, max=11)])
     dataNascimento = DateField('Data de Nascimento', [validators.DataRequired()])
     estadoCivil = SelectField('Estado Civil', [validators.DataRequired()], choices=estado_civil_lista(), default='')
     nomeConjuge = StringField('Nome do Cônjuge', [validators.Length(min=1, max=70)])
