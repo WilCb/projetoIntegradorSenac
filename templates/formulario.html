@@ -16,7 +16,7 @@
             </div>
             <div class="cpf">
                 {{ form.cpf.label() }}
-                {{ form.cpf(class="input__padrao", oninput="criaMascara('CPF')") }}
+                {{ form.cpf(class="input__padrao", oninput="criaMascara('cpf')") }}
             </div>
             <p>{{ p }}</p>
         </div>
@@ -61,7 +61,7 @@
         <span class="titulo__categoria">Endereço</span>
         <div class="caixa__form">
             {{ form.cep.label() }}
-            {{ form.cep(class="input__padrao input-number", id="CEPInput", oninput="criaMascara('CEP')") }}
+            {{ form.cep(class="input__padrao input-number", oninput="criaMascara('cep')") }}
             <p id="erro"></p>
         </div>
         <div class="caixa__dupla">
@@ -98,7 +98,7 @@
         </div>
         <div class="caixa__form">
             {{ form.telefone.label() }}
-            {{ form.telefone(class="input__padrao", id="CelularInput", oninput="criaMascara('Celular')") }}
+            {{ form.telefone(class="input__padrao", oninput="criaMascara('telefone')") }}
         </div>
         <span class="titulo__categoria">Outros Dados</span>
         <div class="caixa__form">

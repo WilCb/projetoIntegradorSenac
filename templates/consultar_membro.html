@@ -6,7 +6,7 @@
         {{ form.csrf_token() }}
         <div class="cpf">
             {{ form.cpf.label() }}
-            {{ form.cpf(class="cpf-busca", id="CPFInput", oninput="criaMascara('CPF')") }}
+            {{ form.cpf(class="cpf-busca", oninput="criaMascara('cpf')") }}
             {{ form.buscar(class="btn-buscar", id="btnBuscar") }}
             <p id="invalido"></p>
         </div>
