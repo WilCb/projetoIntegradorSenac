@@ -11,7 +11,7 @@
             <p id="invalido"></p>
         </div>
     </form>
-    <table class="container__tabela">
+    <table class="container__tabela print">
         <th class="titulo__tabela">Dados Pessoais ---------------------------------------------------------------- </th>
         <tr class="titulos__tabela conteudo__tabela-lista">
             <th class="titulo__tabela">Nome</th>
@@ -151,5 +151,6 @@
             <td class="lista__tabela">{{ form.observacao.data }}</td>
         </tr>
     </table>
+    <button class="btn no-print" id="btnPdf">Salvar</button>
 </section>
 {% endblock %}

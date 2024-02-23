@@ -287,7 +287,7 @@ body {
     visibility: hidden;
   }
   @page {
-    size: auto; /* Pode ser 'auto', 'A4', 'letter', etc. */
+    size: A4; /* Pode ser 'auto', 'A4', 'letter', etc. */
     margin: 0; /* Remove as margens padrão */
   }
   /* Torna o conteúdo visível ocupar toda a folha */
