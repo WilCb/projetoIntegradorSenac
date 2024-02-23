@@ -1,38 +1,28 @@
 .formulario {
+  font-size: 1.2rem;
   display: flex;
   flex-direction: column;
   margin-top: 10px;
   padding: 20px 20px;
-}
-.formulario .barra__progresso {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 8px;
-}
-.formulario .barra__progresso img {
-  width: 100%;
-}
-.formulario .barra__progresso .check {
-  max-width: 395px;
-}
-.formulario .barra__progresso .texto {
-  max-width: 400px;
 }
 .formulario .titulo__form {
   text-align: center;
   margin-top: 40px;
 }
 .formulario .container__form {
+  border: 1px solid black;
   align-self: center;
-  background-color: none;
-  /*  box-shadow: 20px 20px 20px v.$cor-secundaria; */
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 2px 3px 18px 4px #6c6a6a;
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 10px 20px;
   width: 434px;
+}
+.formulario .container__form .nao__obrigatorio::before {
+  content: "";
 }
 .formulario .container__form .titulo__categoria {
   font-weight: 600;
@@ -42,6 +32,7 @@
 .formulario .container__form .rg,
 .formulario .container__form .logradouro,
 .formulario .container__form .numero {
+  font-size: large;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -51,10 +42,10 @@
 .formulario .container__form .rg .input__padrao,
 .formulario .container__form .logradouro .input__padrao,
 .formulario .container__form .numero .input__padrao {
-  border: 0.1rem solid;
+  border: 0.1rem solid #007BFF;
   border-radius: 10px;
   padding: 15px;
-  outline-color: #EDCEA7;
+  outline-color: #6f88be;
 }
 .formulario .container__form .caixa__form .input__padrao option, .formulario .container__form .caixa__estados .uf .input__padrao option,
 .formulario .container__form .caixa__estados .pais .input__padrao option, .formulario .container__form .cpf .input__padrao option,

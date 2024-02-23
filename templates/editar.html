@@ -1,9 +1,6 @@
 {% extends 'template.html' %}
 {% block conteudo %}
 <section class="formulario" id="formulario">
-    <div class="barra__progresso">
-        <img src="../static/img/progresso25.png" alt="Barra de progresso iniciando em 25%">
-    </div>
     <h2 class="titulo__form">Formulário de cadastro</h2>
     <form action="{{ url_for('atualizar_membro') }}" method="post" class="container__form">
         <input type="hidden" name="id" value="{{ id }}">
@@ -181,7 +178,7 @@
             {{ form.observacao(class="input__padrao", id="observacao") }}
         </div>
         <div>
-            {{ form.cadastrar(class="btn") }}
+            {{ form.cadastrar(class="btn", id="btnCadastrar") }}
         </div>
     </form>
 </section>

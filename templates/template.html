@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de Cadastro</title>
+    <title>{{ titulo }}</title>
+    <link rel="shortcut icon" href="../static/img/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="../static/scss/style.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -18,14 +20,13 @@
             <img class="logo" src="../static/img/logo.png" alt="">
             <nav>
                 <a href="{{ url_for('index') }}"><img src="../static/img/house-fill.svg"
-                            alt="Imagem de uma casa na cor branca">Início</a>
-                <a href="{{ url_for('formulario_de_cadastro') }}"><img
-                            src="../static/img/person-fill-add.svg" alt="imagem de um boneco com um sinal de mais">Cadastrar</a>
+                        alt="Imagem de uma casa na cor branca">Início</a>
+                <a href="{{ url_for('formulario_de_cadastro') }}"><img src="../static/img/person-fill-add.svg"
+                        alt="imagem de um boneco com um sinal de mais">Cadastrar</a>
                 <a href="{{ url_for('lista_de_membros') }}"><img src="../static/img/listar.svg"
-                            alt="Imagem de uma prancheta">Lista</a>
+                        alt="Imagem de uma prancheta">Lista</a>
                 <a href="{{ url_for('consultar_membro') }}"><img src="../static/img/bx-search-alt.svg" alt="">Membro</a>
-                <a href="{{url_for('logout')}}"><img src="../static/img/saida.svg"
-                            alt="">Sair</a>
+                <a href="{{url_for('logout')}}"><img src="../static/img/saida.svg" alt="">Sair</a>
             </nav>
         </div>
 
@@ -46,6 +47,7 @@
     <script src="../static/js/preencherEndereco.js"></script>
     <script src="../static/js/salvar_pdf.js"></script>
     <script src="../static/js/mascara.js"></script>
+    <script src="../static/js/valida_select.js"></script>
 </body>
 
 </html>

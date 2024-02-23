@@ -4,7 +4,7 @@ class Cadastro(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(70), nullable=False)
     rg = db.Column(db.BigInteger, nullable=False)
-    cpf = db.Column(db.String(11), nullable=False)
+    CPFInput = db.Column(db.String(11), nullable=False)
     orgao_expedidor = db.Column(db.String(20), nullable=False)
     sexo = db.Column(db.String(10), nullable=False)
     pai = db.Column(db.String(70), nullable=False)

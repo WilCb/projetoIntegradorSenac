@@ -8,7 +8,7 @@ def formulario_de_cadastro():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect(url_for('login', proxima=url_for('formulario_de_cadastro')))
     form = FormularioCadastro()
-    return render_template('formulario.html', form=form)
+    return render_template('formulario.html', form=form, titulo='SIGM - CADASTRO')
 
 @app.route('/cadastrar-no-banco', methods=['POST',])
 def cadastrar_no_banco():
@@ -89,8 +89,9 @@ def cadastrar_no_banco():
 
         db.session.add(novo_membro)
         db.session.commit()
-
-        return redirect(url_for('cadastrado'))
+        
+        flash('Cadastrado realizado')
+        return redirect(url_for('lista_de_membros'))
 
     return redirect(url_for('erro_no_cadastro'))
 
@@ -98,12 +99,12 @@ def cadastrar_no_banco():
 def cadastrado():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect(url_for('login', proxima=url_for('formulario_de_cadastro')))
-    return render_template('erros/confirmacao_de_cadastro.html')
+    return render_template('erros/confirmacao_de_cadastro.html', titulo='SIGM - CADASTRADO')
     
 @app.route('/lista-de-membros')
 def lista_de_membros():
     lista = Cadastro.query.order_by(Cadastro.cpf)
-    return render_template('listar_membros.html', membros=lista)
+    return render_template('listar_membros.html', membros=lista, titulo='SIGM - LISTA')
 
 @app.route('/deletar/<int:id>')
 def deletar(id):
@@ -122,7 +123,10 @@ def editar(id):
     form = FormularioCadastro()
     form.nome.data = membro.nome.strip()
     form.rg.data = membro.rg
-    form.cpf.data = membro.cpf
+    if membro.cpf:
+            cpf_str = str(membro.cpf)
+            cpf_formatado = f'{cpf_str[:3]}.{cpf_str[3:6]}.{cpf_str[6:9]}-{cpf_str[9:]}'
+            form.cpf.data = cpf_formatado
     form.orgao_expedidor.data = membro.orgao_expedidor.strip()
     form.sexo.data = membro.sexo
     form.pai.data = membro.pai.strip()
@@ -130,14 +134,20 @@ def editar(id):
     form.naturalidade.data = membro.naturalidade.strip()
     form.ufIdentidade.data = membro.uf_identidade
     form.pais.data = membro.pais.strip()
-    form.cep.data = membro.cep
+    if membro.cep:
+            cep_str = str(membro.cep)
+            cep_formatado = f'{cep_str[:5]}-{cep_str[5:]}'
+            form.cep.data = cep_formatado
     form.logradouro.data = membro.logradouro.strip()
     form.numero.data = membro.numero
     form.complemento.data = membro.complemento.strip()
     form.bairro.data = membro.bairro.strip()
     form.cidade.data = membro.cidade.strip()
     form.ufEndereco.data = membro.uf_endereco
-    form.telefone.data = membro.telefone
+    if membro.telefone:
+            tel_str = str(membro.telefone)
+            tel_formatado = f'({tel_str[:2]}) {tel_str[2:7]}-{tel_str[7:]}'
+            form.telefone.data = tel_formatado
     form.dataNascimento.data = membro.data_nascimento
     form.estadoCivil.data = membro.estado_civil
     form.nomeConjuge.data = membro.nome_conjuge.strip()
@@ -151,7 +161,7 @@ def editar(id):
     form.origem.data = membro.origem
     form.situacao.data = membro.situacao
     form.observacao.data = membro.igreja_cidade
-    return render_template('editar.html', id=id, form=form)
+    return render_template('editar.html', id=id, form=form, titulo='SIGM - EDITAR')
 
 @app.route('/atualizar-membro', methods=['POST',])
 def atualizar_membro():
@@ -174,7 +184,7 @@ def atualizar_membro():
     membro.bairro = form.bairro.data
     membro.cidade = form.cidade.data
     membro.uf_endereco = form.ufEndereco.data
-    membro.telefone = form.telefone.data
+    membro.telefone = form.telefone.data.replace('(', '').replace(')', '').replace('-', '').replace(' ', '')
     membro.data_nascimento = form.dataNascimento.data
     membro.estado_civil = form.estadoCivil.data
     membro.nome_conjuge = form.nomeConjuge.data
@@ -200,7 +210,7 @@ def consultar_membro():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect(url_for('login', proxima=url_for('formulario_de_cadastro')))
     form = FormularioCadastro()
-    return render_template('consultar_membro.html', form=form)
+    return render_template('consultar_membro.html', form=form, titulo='SIGM - CONSULTA')
 
 @app.route("/receber_dados", methods=['POST',])
 def receber_dados():
@@ -256,7 +266,7 @@ def receber_dados():
         form.situacao.data = membro.situacao
         form.observacao.data = membro.igreja_cidade
 
-        return render_template('consultar_membro.html', form=form)
+        return render_template('consultar_membro.html', form=form, titulo='SIGM - CONSULTA')
     except AttributeError:
         flash(f'CPF Inválido ou não cadastrado ! ')
         return redirect(url_for('consultar_membro'))

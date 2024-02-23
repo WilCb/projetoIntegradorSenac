@@ -7,13 +7,18 @@
     </div>
 
     <div>
-        <span> {{ data_atual }}</span>
-        <table>
-            <th>Aniversariantes do mês {{ mes }}</th>
-            {% for i in mes_aniversario %}
-            <td>{{ aniversariante }}</td>
+        <table class="container__tabela">
+            <th class="titulo__tabela">Aniversariantes do mês</th>
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Nome</th>
+                <th class="titulo__tabela">Data de Nascimento</th>
+            </tr> 
+            {% for membro in membros %}
+            <tr class="conteudo__tabela-lista">
+                <td class="lista__tabela">{{ membro.nome }}</td>
+                <td class="lista__tabela">{{ membro.data_nascimento.strftime('%d/%m/%Y') }}</td>
+            </tr>               
             {% endfor %}
-
         </table>
     </div>
 </section>

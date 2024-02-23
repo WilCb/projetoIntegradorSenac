@@ -2,12 +2,12 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .conteudo {
-  background-color: #EEEEEE;
-  background-repeat: no-repeat;
+  background-image: url(/static/img/5134341.jpg);
+  /* background-repeat: ; */
   background-size: cover;
   background-attachment: fixed;
   display: flex;
@@ -52,7 +52,7 @@ body {
 
 .container__nav {
   align-items: center;
-  background-color: #6f88be;
+  background-color: #007BFF;
   display: flex;
   gap: 60px;
   flex-direction: column;
@@ -88,19 +88,19 @@ body {
   justify-content: center;
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #ffffff;
-  background-color: #F82825;
-  min-width: 14rem;
+  background-color: #007BFF;
+  min-width: 17.1rem;
   min-height: 4rem;
   padding: 5px 0;
-  border-radius: 10px;
-  box-shadow: 0px 5px 6px 0px #000000;
+  /* border-radius: 10px; */
+  /* box-shadow: 0px 5px 6px 0px #000000; */
   cursor: pointer;
   transition: 0.5s;
 }
 .container__nav nav a:hover {
-  background: #f3c21d;
+  background: #3363cc;
 }
 .container__nav nav a img {
   padding: 0.75rem;
@@ -110,40 +110,30 @@ body {
 }
 
 .formulario {
+  font-size: 1.2rem;
   display: flex;
   flex-direction: column;
   margin-top: 10px;
   padding: 20px 20px;
-}
-.formulario .barra__progresso {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 8px;
-}
-.formulario .barra__progresso img {
-  width: 100%;
-}
-.formulario .barra__progresso .check {
-  max-width: 395px;
-}
-.formulario .barra__progresso .texto {
-  max-width: 400px;
 }
 .formulario .titulo__form {
   text-align: center;
   margin-top: 40px;
 }
 .formulario .container__form {
+  border: 1px solid black;
   align-self: center;
-  background-color: none;
-  /*  box-shadow: 20px 20px 20px v.$cor-secundaria; */
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 2px 3px 18px 4px #6c6a6a;
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 10px 20px;
   width: 434px;
+}
+.formulario .container__form .nao__obrigatorio::before {
+  content: "";
 }
 .formulario .container__form .titulo__categoria {
   font-weight: 600;
@@ -153,6 +143,7 @@ body {
 .formulario .container__form .rg,
 .formulario .container__form .logradouro,
 .formulario .container__form .numero {
+  font-size: large;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -162,10 +153,10 @@ body {
 .formulario .container__form .rg .input__padrao,
 .formulario .container__form .logradouro .input__padrao,
 .formulario .container__form .numero .input__padrao {
-  border: 0.1rem solid;
+  border: 0.1rem solid #007BFF;
   border-radius: 10px;
   padding: 15px;
-  outline-color: #EDCEA7;
+  outline-color: #6f88be;
 }
 .formulario .container__form .caixa__form .input__padrao option, .formulario .container__form .caixa__estados .uf .input__padrao option,
 .formulario .container__form .caixa__estados .pais .input__padrao option, .formulario .container__form .cpf .input__padrao option,
@@ -226,6 +217,33 @@ body {
   background-color: #EDCEA7;
 }
 
+.btn-buscar {
+  height: 26px;
+  border: 1px solid;
+  border-left: none;
+  border-radius: 0px 168px 168px 0px;
+  -webkit-border-radius: 0px 168px 168px 0px;
+  -moz-border-radius: 0px 168px 168px 0px;
+}
+
+.cpf {
+  display: flex;
+  align-items: center;
+}
+.cpf label {
+  margin-right: 5px;
+  font-weight: 600;
+  font-size: 22px;
+}
+.cpf .cpf-busca {
+  border-radius: 168px 0px 0px 167px;
+  -webkit-border-radius: 168px 0px 0px 167px;
+  -moz-border-radius: 168px 0px 0px 167px;
+  height: 22px;
+  border: 1px solid;
+  border-right: none;
+}
+
 .geral__tabela {
   align-items: center;
   display: flex;
@@ -246,9 +264,6 @@ body {
 }
 .geral__tabela .container__tabela .titulos__tabela .titulo__tabela {
   border: 1px solid;
-}
-.geral__tabela .container__tabela .titulos__tabela .titulo__tabela:hover {
-  background-color: #CCCCCC;
 }
 .geral__tabela .container__tabela .conteudo__tabela-lista .lista__tabela {
   font-size: 12px;
