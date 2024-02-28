@@ -1,0 +1,11 @@
+@use '../abstract/variaveis' as v;
+@use '../abstract/mixins';
+
+.conteudo {
+    @include mixins.dflex-aitems-jcontent-flexd-gap(stretch, flex-start, column, 0);
+    
+    background-image: url(/static/img/5134341.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+}

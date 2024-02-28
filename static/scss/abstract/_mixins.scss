@@ -1,0 +1,13 @@
+@mixin fs-fc-fw($font-size, $font-color, $font-weight ) {
+    font-size: $font-size;
+    color: $font-color;
+    font-weight: $font-weight;
+}
+
+@mixin dflex-aitems-jcontent-flexd-gap($a-items, $j-content, $flex-d, $gap) {
+    display: flex;
+    align-items: $a-items;
+    justify-content: $j-content;
+    flex-direction: $flex-d;
+    gap: $gap;
+}

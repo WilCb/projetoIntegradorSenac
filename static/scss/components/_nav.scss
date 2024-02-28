@@ -1,11 +1,10 @@
-@use '../variaveis/variaveis.scss' as v;
+@use '../abstract/variaveis' as v;
+@use '../abstract/mixins';
 
 .container__nav {
-    align-items: center;
+    @include mixins.dflex-aitems-jcontent-flexd-gap(center, flex-start, column, 60px);
+    
     background-color: v.$bd-nav;
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
     min-height: 100vh;
     min-width: 17rem;
     position: relative;
@@ -19,19 +18,18 @@
     }
 
     nav {
-        display: flex;
-        flex-direction: column;
+        @include mixins.dflex-aitems-jcontent-flexd-gap(stretch, flex-start, column, 0);
+
         margin-top: 60px;
         position: fixed;
         top: 100px;
 
         a {
-            align-items: center;
+            @include mixins.dflex-aitems-jcontent-flexd-gap(center, center, row, 0);
+
             background-color: v.$bd-nav;
-            color: #ffffff;
-            display: flex;
-            font-size: 1.5rem;
-            justify-content: center;
+            color: v.$cor-font-btn;
+            font-size: v.$font-subtitulo;
             min-height: 4rem;
             min-width: 17.1rem;
             padding: 5px 0;

@@ -25,7 +25,7 @@
             {{ form.orgao_expedidor(class="input__padrao", id="orgaoExpedidor") }}
         </div>
         <div class="caixa__form">
-            <label for="sexo">Sexo:</label>
+            <label for="sexo" class="input__label">Sexo:</label>
             <select id="sexo" name="sexo" class="input__padrao">
                 {% for value, label in form.sexo.choices %}
                 <option value="{{ value }}">{{ label }}</option>
@@ -46,7 +46,7 @@
         </div>
         <div class="caixa__estados">
             <div class="uf">
-                <label for="ufIdentidade">UF Identidade:</label>
+                <label for="ufIdentidade" class="input__label">UF Identidade:</label>
                 <select id="ufIdentidade" name="ufIdentidade" class="input__padrao">
                     {% for value, label in form.ufIdentidade.choices %}
                     <option value="{{ value }}">{{ label }}</option>
@@ -75,7 +75,7 @@
             </div>
         </div>
         <div class="caixa__form">
-            {{ form.complemento.label(class="input__label") }}
+            {{ form.complemento.label(class="input__label nao__obrigatorio") }}
             {{ form.complemento(class="input__padrao", id="complemento") }}
         </div>
         <div class="caixa__form">
@@ -88,7 +88,7 @@
                 {{ form.cidade(class="input__padrao", id="cidade") }}
             </div>
             <div class="uf">
-                <label for="ufEndereco">UF</label>
+                <label for="ufEndereco" class="input__label">UF</label>
                 <select id="ufEndereco" name="ufEndereco" class="input__padrao">
                     {% for value, label in form.ufEndereco.choices %}
                     <option value="{{ value }}">{{ label }}</option>
@@ -106,7 +106,7 @@
             {{ form.dataNascimento(class="input__padrao", id="dataNascimento") }}
         </div>
         <div class="caixa__form">
-            <label for="estadoCivil">Estado Civil</label>
+            <label for="estadoCivil" class="input__label">Estado Civil</label>
             <select id="estadoCivil" name="estadoCivil" class="input__padrao">
                 {% for value, label in form.estadoCivil.choices %}
                 <option value="{{ value }}">{{ label }}</option>
@@ -122,7 +122,7 @@
             {{ form.profissao(class="input__padrao", id="profissao") }}
         </div>
         <div class="caixa__form">
-            <label for="escolaridade">Escolaridade</label>
+            <label for="escolaridade" class="input__label">Escolaridade</label>
             <select id="escolaridade" name="escolaridade" class="input__padrao">
                 {% for value, label in form.escolaridade.choices %}
                 <option value="{{ value }}">{{ label }}</option>
@@ -130,11 +130,11 @@
             </select>
         </div>
         <div class="caixa__form">
-            {{ form.dataDeBatismo.label(class="input__label") }}
+            {{ form.dataDeBatismo.label(class="input__label nao__obrigatorio") }}
             {{ form.dataDeBatismo(class="input__padrao", id="dataDeBatismo") }}
         </div>
         <div class="caixa__form">
-            <label for="batizado">Batizado no Espírito Santo?</label>
+            <label for="batizado" class="input__label">Batizado no Espírito Santo?</label>
             <select id="batizado" name="batizado" class="input__padrao">
                 {% for value, label in form.batizado.choices %}
                 <option value="{{ value }}">{{ label }}</option>
@@ -142,7 +142,7 @@
             </select>
         </div>
         <div class="caixa__form">
-            {{ form.entradaRol.label(class="input__label") }}
+            {{ form.entradaRol.label(class="input__label nao__obrigatorio") }}
             {{ form.entradaRol(class="input__padrao", id="entradaRol") }}
         </div>
         <div class="caixa__form">
@@ -150,7 +150,7 @@
             {{ form.congregacao(class="input__padrao input-number", id="congregacao") }}
         </div>
         <div class="caixa__form">
-            <label for="funcao">Função:</label>
+            <label for="funcao" class="input__label">Função:</label>
             <select id="funcao" name="funcao" class="input__padrao">
                 {% for value, label in form.funcao.choices %}
                 <option value="{{ value }}">{{ label }}</option>
@@ -158,7 +158,7 @@
             </select>
         </div>
         <div class="caixa__form">
-            <label for="origem">Origem:</label>
+            <label for="origem" class="input__label">Origem:</label>
             <select id="origem" name="origem" class="input__padrao">
                 {% for value, label in form.origem.choices %}
                 <option value="{{ value }}">{{ label }}</option>
@@ -166,7 +166,7 @@
             </select>
         </div>
         <div class="caixa__form">
-            <label for="situacao">Situação:</label>
+            <label for="situacao" class="input__label">Situação:</label>
             <select id="situacao" name="situacao" class="input__padrao">
                 {% for value, label in form.situacao.choices %}
                 <option value="{{ value }}">{{ label }}</option>

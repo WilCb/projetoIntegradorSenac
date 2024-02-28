@@ -1,4 +1,5 @@
-@use '../variaveis/variaveis.scss' as v;
+@use '../abstract/variaveis' as v;
+@use '../abstract/mixins';
 
 .titulo__form {
     text-shadow: 2px 4px 5px rgba(103, 103, 103, 0.57);
@@ -20,8 +21,7 @@
 }
 
 .cpf {
-    display: flex;
-    align-items: center;
+    @include mixins.dflex-aitems-jcontent-flexd-gap(center, flex-start, row, 0);
 
     label {
         margin-right: 5px;
@@ -45,13 +45,12 @@
 }
 
 .dashboard {
-
-    display: flex;
-    justify-content: center;
+    @include mixins.dflex-aitems-jcontent-flexd-gap(stretch, center, row, 32px);
     margin: 120px 0 0 0;
-    gap: 32px;
 
     .dashboard__total__membros {
+        @include mixins.dflex-aitems-jcontent-flexd-gap(center, flex-start, column, 0);
+
         display: flex;
         flex-direction: column;
         gap: 8px;
@@ -68,10 +67,7 @@
         }
 
         p {
-            color: red;
-            font-size: 28px;
-            font-weight: 800;
-
+            @include mixins.fs-fc-fw(1.75rem, red, 600);
         }
     }
 
@@ -80,21 +76,15 @@
         justify-content: flex-start;
 
         .titulo {
+            @include mixins.fs-fc-fw(2rem, v.$cor-font-texto-padrao, 600);
             margin: 0;
-            font-size: 32px;
         }
 
         .dashboard__container__tabela {
+            @include mixins.dflex-aitems-jcontent-flexd-gap(stretch, space-around, column, 20px);
 
             border-collapse: collapse;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            justify-content: space-around;
-
             text-align: center;
-
-
 
             .titulo__tabela {
                 border: 1px solid;
@@ -104,7 +94,7 @@
 
             .conteudo__tabela-lista {
                 .lista__tabela {
-                    font-size: 12px;
+                    @include mixins.fs-fc-fw(0.75rem, v.$cor-font-texto-padrao, 400);
                     border: 1px solid;
                     padding: 2px;
                 }
@@ -117,10 +107,8 @@
 .btn-buscar {
     height: 31px;
     border: 1px solid black;
-    color: #ffffff;
-    background-color: #3652AD;
-
-
+    color: v.$cor-font-btn;
+    background-color: v.$bd-btn2;
 }
 
 .titulo_pagina {
@@ -130,10 +118,7 @@
 }
 
 .geral__tabela {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    @include mixins.dflex-aitems-jcontent-flexd-gap(center, flex-start, column, 60px);
     margin-top: 120px;
     padding: 40px 0;
 
@@ -149,30 +134,29 @@
             border-collapse: collapse;
 
             .titulo__secao {
-                font-size: 1.5rem;
+                @include mixins.fs-fc-fw(1.5rem, v.$cor-font-texto-padrao, 600);
             }
+            
             .titulos__tabela {
                 .titulo__tabela {
+                    @include mixins.fs-fc-fw(1rem, v.$cor-font-texto-padrao, 500);
                     border: 1px solid;
-                    font-weight: 500;
                     width: 200px;
                 }
             }
-    
+            
             .conteudo__tabela-lista {
                 .lista__tabela {
-                    font-size: 12px;
+                    @include mixins.fs-fc-fw(0.75rem, v.$cor-font-texto-padrao, 400);
                     border: 1px solid;
                     padding: 5px 20px 7px 20px;
                 }
-    
+
             }
-        }  
+        }
     }
 
     .btn {
-
-
         margin: 20px 0;
         background-color: v.$bd-btn;
         border: none;
@@ -180,7 +164,7 @@
         cursor: pointer;
         padding: 10px 40px;
         color: #ffffff;
-        background-color: #3752AD;
+        background-color: v.$bd-btn2;
 
         &:hover {
             background-color: v.$bd-btn-hover;

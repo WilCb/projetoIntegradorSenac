@@ -5,56 +5,17 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.conteudo {
-  background-image: url(/static/img/5134341.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.container__header {
-  align-items: center;
-  background-color: #952CAE;
-  display: flex;
-  height: 50px;
-  justify-content: space-between;
-  padding: 40px 20px;
-  position: fixed;
-  right: 0;
-  width: 100%;
-  border-bottom: 0.1rem solid;
-  /* box-shadow: -1px 6px 5px -5px rgba(10,10,10,1);
-  -webkit-box-shadow: -1px 6px 5px -5px rgba(10,10,10,1);
-  -moz-box-shadow: -1px 6px 5px -5px rgba(10,10,10,1);
-   */
-}
-.container__header .container__img {
-  margin-left: 55px;
-}
-.container__header .titulo {
-  width: 100%;
-}
-.container__header .titulo h1 {
-  text-align: center;
-}
-.container__header .icones {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
 .geral {
   display: flex;
 }
 
 .container__nav {
-  align-items: center;
-  background-color: #007BFF;
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
   flex-direction: column;
   gap: 60px;
+  background-color: #007BFF;
   min-height: 100vh;
   min-width: 17rem;
   position: relative;
@@ -68,18 +29,23 @@ body {
 }
 .container__nav nav {
   display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
   flex-direction: column;
+  gap: 0;
   margin-top: 60px;
   position: fixed;
   top: 100px;
 }
 .container__nav nav a {
-  align-items: center;
-  background-color: #007BFF;
-  color: #ffffff;
   display: flex;
-  font-size: 1.5rem;
+  align-items: center;
   justify-content: center;
+  flex-direction: row;
+  gap: 0;
+  background-color: #007BFF;
+  color: #FFFFFF;
+  font-size: 1.5rem;
   min-height: 4rem;
   min-width: 17.1rem;
   padding: 5px 0;
@@ -110,44 +76,75 @@ body {
     display: none;
   }
 }
+.conteudo {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 0;
+  background-image: url(/static/img/5134341.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+}
+
 .formulario {
   display: flex;
-  font-size: 1.2rem;
+  align-items: stretch;
+  justify-content: flex-start;
   flex-direction: column;
+  gap: 0;
   padding: 20px 20px;
 }
 .formulario .titulo__form {
+  font-size: 2.25rem;
+  color: #000000;
+  font-weight: 600;
   margin-top: 40px;
   text-shadow: 2px 4px 5px rgba(103, 103, 103, 0.57);
   text-align: center;
 }
 .formulario .container__form {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
   align-self: center;
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
   border-radius: 10px;
   box-shadow: 2px 3px 18px 4px #6c6a6a;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px 20px;
+  padding: 40px 20px;
   width: 434px;
 }
 .formulario .container__form .nao__obrigatorio::before {
   content: "";
 }
 .formulario .container__form .titulo__categoria {
-  font-weight: 600;
+  font-size: 1.5rem;
+  color: #000000;
+  font-weight: 500;
 }
 .formulario .container__form .caixa__form, .formulario .container__form .caixa__estados .uf,
 .formulario .container__form .caixa__estados .pais, .formulario .container__form .cpf-form,
 .formulario .container__form .rg,
 .formulario .container__form .logradouro,
 .formulario .container__form .numero {
-  font-size: 1.2rem;
   display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
   flex-direction: column;
-  gap: 10px;
+  gap: 10;
+}
+.formulario .container__form .caixa__form .input__label, .formulario .container__form .caixa__estados .uf .input__label,
+.formulario .container__form .caixa__estados .pais .input__label, .formulario .container__form .cpf-form .input__label,
+.formulario .container__form .rg .input__label,
+.formulario .container__form .logradouro .input__label,
+.formulario .container__form .numero .input__label {
+  font-size: 1.2rem;
+  color: #000000;
+  font-weight: 400;
 }
 .formulario .container__form .caixa__form .input__padrao, .formulario .container__form .caixa__estados .uf .input__padrao,
 .formulario .container__form .caixa__estados .pais .input__padrao, .formulario .container__form .cpf-form .input__padrao,
@@ -183,8 +180,21 @@ body {
 }
 .formulario .container__form .caixa__dupla {
   display: flex;
-  gap: 10px;
+  align-items: stretch;
   justify-content: space-between;
+  flex-direction: row;
+  gap: 30px;
+}
+.formulario .container__form .caixa__dupla #cpf {
+  width: 100%;
+}
+.formulario .container__form .caixa__dupla #rg {
+  width: 95%;
+}
+.formulario .container__form .caixa__dupla .input__label {
+  font-size: 1.2rem;
+  color: #000000;
+  font-weight: 400;
 }
 .formulario .container__form .logradouro {
   width: 80%;
@@ -192,15 +202,11 @@ body {
 .formulario .container__form .numero {
   width: 20%;
 }
-.formulario .container__form .caixa__sexo {
-  background: #FFFFFF;
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-}
 .formulario .container__form .caixa__estados {
-  justify-content: space-between;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
   gap: 10px;
 }
 .formulario .container__form .caixa__estados .uf,
@@ -208,7 +214,6 @@ body {
   width: 100%;
 }
 .formulario .container__form .btn {
-  margin: 20px 0;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -241,6 +246,9 @@ body {
 .cpf {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 0;
 }
 .cpf label {
   margin-right: 5px;
@@ -261,11 +269,18 @@ body {
 
 .dashboard {
   display: flex;
+  align-items: stretch;
   justify-content: center;
-  margin: 120px 0 0 0;
+  flex-direction: row;
   gap: 32px;
+  margin: 120px 0 0 0;
 }
 .dashboard .dashboard__total__membros, .dashboard .dashboard__tabela {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 0;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -281,23 +296,26 @@ body {
   font-size: 32px;
 }
 .dashboard .dashboard__total__membros p, .dashboard .dashboard__tabela p {
+  font-size: 1.75rem;
   color: red;
-  font-size: 28px;
-  font-weight: 800;
+  font-weight: 600;
 }
 .dashboard .dashboard__tabela {
   justify-content: flex-start;
 }
 .dashboard .dashboard__tabela .titulo {
+  font-size: 2rem;
+  color: #000000;
+  font-weight: 600;
   margin: 0;
-  font-size: 32px;
 }
 .dashboard .dashboard__tabela .dashboard__container__tabela {
-  border-collapse: collapse;
   display: flex;
+  align-items: stretch;
+  justify-content: space-around;
   flex-direction: column;
   gap: 20px;
-  justify-content: space-around;
+  border-collapse: collapse;
   text-align: center;
 }
 .dashboard .dashboard__tabela .dashboard__container__tabela .titulo__tabela {
@@ -305,7 +323,9 @@ body {
   text-align: center;
 }
 .dashboard .dashboard__tabela .dashboard__container__tabela .conteudo__tabela-lista .lista__tabela {
-  font-size: 12px;
+  font-size: 0.75rem;
+  color: #000000;
+  font-weight: 400;
   border: 1px solid;
   padding: 2px;
 }
@@ -313,7 +333,7 @@ body {
 .btn-buscar {
   height: 31px;
   border: 1px solid black;
-  color: #ffffff;
+  color: #FFFFFF;
   background-color: #3652AD;
 }
 
@@ -324,10 +344,11 @@ body {
 }
 
 .geral__tabela {
-  align-items: center;
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
   flex-direction: column;
-  gap: 16px;
+  gap: 60px;
   margin-top: 120px;
   padding: 40px 0;
 }
@@ -344,14 +365,20 @@ body {
 }
 .geral__tabela .container__tabela table .titulo__secao {
   font-size: 1.5rem;
+  color: #000000;
+  font-weight: 600;
 }
 .geral__tabela .container__tabela table .titulos__tabela .titulo__tabela {
-  border: 1px solid;
+  font-size: 1rem;
+  color: #000000;
   font-weight: 500;
+  border: 1px solid;
   width: 200px;
 }
 .geral__tabela .container__tabela table .conteudo__tabela-lista .lista__tabela {
-  font-size: 12px;
+  font-size: 0.75rem;
+  color: #000000;
+  font-weight: 400;
   border: 1px solid;
   padding: 5px 20px 7px 20px;
 }
@@ -363,7 +390,7 @@ body {
   cursor: pointer;
   padding: 10px 40px;
   color: #ffffff;
-  background-color: #3752AD;
+  background-color: #3652AD;
 }
 .geral__tabela .btn:hover {
   background-color: #3363cc;
