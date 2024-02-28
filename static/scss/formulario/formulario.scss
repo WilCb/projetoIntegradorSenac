@@ -1,26 +1,21 @@
 @use '../variaveis/variaveis.scss' as v;
 
 .formulario {
-   
+    display: flex;
     font-size: 1.2rem;
-    display:flex;
     flex-direction: column;
-    margin-top: 10px;
     padding: 20px 20px;
-    
-
-   
-    
 
     .titulo__form {
-        text-align: center;
         margin-top: 40px;
+        text-shadow: v.$cor-text-shadow;
+        text-align: center;
     }
 
     .container__form {
-        border: 1px solid black;
-        align-self:center;
-        background-color:#FFFFFF;
+        align-self: center;
+        background-color: rgba(255, 255, 255, 0.5);
+        border: none;
         border-radius: 10px;
         box-shadow: 2px 3px 18px 4px #6c6a6a;
         display: flex;
@@ -32,24 +27,25 @@
         .nao__obrigatorio::before {
             content: '';
         }
+
         .titulo__categoria {
             font-weight: 600;
         }
 
         .caixa__form {
-            font-size: large;
+            font-size: 1.2rem;
             display: flex;
             flex-direction: column;
             gap: 10px;
 
-                
-        
             .input__padrao {
-                
+
                 border: 0.100rem solid v.$cor-nav;
                 border-radius: 10px;
                 padding: 15px;
                 outline-color: v.$cor-botao-nav;
+                background-color: v.$bd-input;
+
                 option {
                     text-align: center;
                 }
@@ -72,7 +68,7 @@
             justify-content: space-between;
         }
 
-        .cpf,
+        .cpf-form,
         .rg,
         .logradouro,
         .numero {
@@ -109,14 +105,15 @@
 
         .btn {
             margin: 20px 0;
-            background-color: v.$cor-secundaria;
             border: none;
             border-radius: 20px;
             cursor: pointer;
             padding: 10px 40px;
+            color: white;
+            background-color: #3752ad;
 
             &:hover {
-                background-color: v.$cor-primaria;
+                background-color: v.$bd-btn-hover;
             }
         }
     }

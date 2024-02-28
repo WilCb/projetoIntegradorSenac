@@ -1,14 +1,16 @@
 {% extends 'template.html' %}
 {% block conteudo %}
 
-<section class="geral__tabela">
-    <div>
-        <p> Total de membros cadastrados: {{ total_de_membros }}</p>
+<section class="dashboard">
+    <div class="dashboard__total__membros">
+        <h1> Total de Membros</h1>
+        <p>{{ total_de_membros }}</p>
     </div>
 
-    <div>
-        <table class="container__tabela">
-            <th class="titulo__tabela">Aniversariantes do mês</th>
+    <div class="dashboard__tabela">
+        <h1 class="titulo">Aniversariantes do mês</h1>
+        <table class="dashboard__container__tabela">
+            
             <tr class="titulos__tabela conteudo__tabela-lista">
                 <th class="titulo__tabela">Nome</th>
                 <th class="titulo__tabela">Data de Nascimento</th>

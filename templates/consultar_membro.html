@@ -6,151 +6,153 @@
         {{ form.csrf_token() }}
         <div class="cpf">
             {{ form.cpf.label() }}
-            {{ form.cpf(class="cpf-busca", oninput="criaMascara('cpf')") }}
+            {{ form.cpf(class="cpf-busca", value='', oninput="criaMascara('cpf')") }}
             {{ form.buscar(class="btn-buscar", id="btnBuscar") }}
-            <p id="invalido"></p>
         </div>
     </form>
-    <table class="container__tabela print">
-        <th class="titulo__tabela">Dados Pessoais ---------------------------------------------------------------- </th>
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Nome</th>
-            <td class="lista__tabela">{{ form.nome.data }}</td>
-        </tr>
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">RG</th>
-            <td class="lista__tabela">{{ form.rg.data }}</td>
-        </tr>
-
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">CPF</th>
-            <td class="lista__tabela">{{ form.cpf.data }}</td>
-        </tr>
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Orgão Expedidor</td>
-            <td class="lista__tabela">{{ form.orgao_expedidor.data }}</td>
-        </tr>
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Sexo</th>
-            <td class="lista__tabela">{{ form.sexo.data }}</td>
-        </tr>
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Pai</th>
-            <td class="lista__tabela">{{ form.pai.data }}</td>
-        </th>
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Mãe</td>
-            <td class="lista__tabela">{{ form.mae.data }}</td>
-        </tr>
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Naturalidade</th>
-            <td class="lista__tabela">{{ form.naturalidade.data }}</td>
-        </tr>
-
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">UF Nascimento</th>
-            <td class="lista__tabela">{{ form.ufIdentidade.data }}</td>
-        </tr>
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">País</th>
-            <td class="lista__tabela">{{ form.pais.data }}</td>
-        </tr>
-        <th class="titulo__tabela">Endereço ---------------------------------------------------------------- </th>
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">CEP</th>
-            <td class="lista__tabela">{{ form.cep.data }}</td>
-        </tr>
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Logradouro</th>
-            <td class="lista__tabela">{{ form.logradouro.data }}</td>
-        </tr>
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Número</th>
-            <td class="lista__tabela">{{ form.numero.data }}</td>
-        </tr>
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Complemento</th>
-            <td class="lista__tabela">{{ form.complemento.data }}</td>
-        </tr>
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Bairro</th>
-            <td class="lista__tabela">{{ form.bairro.data }}</td>
-        </tr>
-
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Cidade</th>
-            <td class="lista__tabela">{{ form.cidade.data }}</td>
-        </tr>
-        
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">UF</th>
-            <td class="lista__tabela">{{ form.ufEndereco.data }}</td>
-        </tr>
-
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Telefone</th>
-            <td class="lista__tabela">{{ form.telefone.data }}</td>
-        </tr>
-
-        <th class="titulo__tabela">Outros Dados ---------------------------------------------------------------- </th>
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Data de Nascimento</th>
-            <td class="lista__tabela">{{ form.dataNascimento.data }}</td>
-        </tr>
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Estado Civil</th>
-            <td class="lista__tabela">{{ form.estadoCivil.data }}</td>
-        </tr>
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Nome do conjugê</th>
-            <td class="lista__tabela">{{ form.nomeConjuge.data }}</td>
-        </tr>
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Profissão</th>
-            <td class="lista__tabela">{{ form.profissao.data }}</td>
-        </tr>
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Escolaridade</th>
-            <td class="lista__tabela">{{ form.escolaridade.data }}</td>
-        </tr>
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Data de Batismo</th>
-            <td class="lista__tabela">{{ form.dataDeBatismo.data }}</td>
-        </tr>
-
-        <tr class="titulos__tabela conteudo__tabela-lista">      
-            <th class="titulo__tabela">Batizado no Esp. Santo ?</th>
-            <td class="lista__tabela">{{ form.batizado.data }}</td>
-        </tr>
-
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Entrada no ROL</th>
-            <td class="lista__tabela">{{ form.entradaRol.data }}</td>
-        </tr>
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Congregação</th>
-            <td class="lista__tabela">{{ form.congregacao.data }}</td>
-        </tr>
-
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Função</th>
-            <td class="lista__tabela">{{ form.funcao.data }}</td>
-        </tr>
-
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Origem</th>
-            <td class="lista__tabela">{{ form.origem.data }}</td>
-        </tr>
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">Situação</th>
-            <td class="lista__tabela">{{ form.situacao.data }}</td>
-        </tr>
-
-        <tr class="titulos__tabela conteudo__tabela-lista">
-            <th class="titulo__tabela">De qual igreja?</th>
-            <td class="lista__tabela">{{ form.observacao.data }}</td>
-        </tr>
-    </table>
+    <div class="container__tabela">
+        <table class="print">
+            <th class="titulo__secao">Dados Pessoais</th>
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Nome</th>
+                <td class="lista__tabela">{{ form.nome.data }}</td>
+            </tr>
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">RG</th>
+                <td class="lista__tabela">{{ form.rg.data }}</td>
+            </tr>
+    
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">CPF</th>
+                <td class="lista__tabela">{{ form.cpf.data }}</td>
+            </tr>
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Orgão Expedidor</td>
+                <td class="lista__tabela">{{ form.orgao_expedidor.data }}</td>
+            </tr>
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Sexo</th>
+                <td class="lista__tabela">{{ form.sexo.data }}</td>
+            </tr>
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Pai</th>
+                <td class="lista__tabela">{{ form.pai.data }}</td>
+            </th>
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Mãe</td>
+                <td class="lista__tabela">{{ form.mae.data }}</td>
+            </tr>
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Naturalidade</th>
+                <td class="lista__tabela">{{ form.naturalidade.data }}</td>
+            </tr>
+    
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">UF Nascimento</th>
+                <td class="lista__tabela">{{ form.ufIdentidade.data }}</td>
+            </tr>
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">País</th>
+                <td class="lista__tabela">{{ form.pais.data }}</td>
+            </tr>
+            <th class="titulo__secao">Endereço</th>
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">CEP</th>
+                <td class="lista__tabela">{{ form.cep.data }}</td>
+            </tr>
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Logradouro</th>
+                <td class="lista__tabela">{{ form.logradouro.data }}</td>
+            </tr>
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Número</th>
+                <td class="lista__tabela">{{ form.numero.data }}</td>
+            </tr>
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Complemento</th>
+                <td class="lista__tabela">{{ form.complemento.data }}</td>
+            </tr>
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Bairro</th>
+                <td class="lista__tabela">{{ form.bairro.data }}</td>
+            </tr>
+    
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Cidade</th>
+                <td class="lista__tabela">{{ form.cidade.data }}</td>
+            </tr>
+            
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">UF</th>
+                <td class="lista__tabela">{{ form.ufEndereco.data }}</td>
+            </tr>
+    
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Telefone</th>
+                <td class="lista__tabela">{{ form.telefone.data }}</td>
+            </tr>
+    
+            <th class="titulo__secao">Outros Dados</th>
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Data de Nascimento</th>
+                <td class="lista__tabela">{{ form.dataNascimento.data }}</td>
+            </tr>
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Estado Civil</th>
+                <td class="lista__tabela">{{ form.estadoCivil.data }}</td>
+            </tr>
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Nome do conjugê</th>
+                <td class="lista__tabela">{{ form.nomeConjuge.data }}</td>
+            </tr>
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Profissão</th>
+                <td class="lista__tabela">{{ form.profissao.data }}</td>
+            </tr>
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Escolaridade</th>
+                <td class="lista__tabela">{{ form.escolaridade.data }}</td>
+            </tr>
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Data de Batismo</th>
+                <td class="lista__tabela">{{ form.dataDeBatismo.data }}</td>
+            </tr>
+    
+            <tr class="titulos__tabela conteudo__tabela-lista">      
+                <th class="titulo__tabela">Batizado no Esp. Santo ?</th>
+                <td class="lista__tabela">{{ form.batizado.data }}</td>
+            </tr>
+    
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Entrada no ROL</th>
+                <td class="lista__tabela">{{ form.entradaRol.data }}</td>
+            </tr>
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Congregação</th>
+                <td class="lista__tabela">{{ form.congregacao.data }}</td>
+            </tr>
+    
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Função</th>
+                <td class="lista__tabela">{{ form.funcao.data }}</td>
+            </tr>
+    
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Origem</th>
+                <td class="lista__tabela">{{ form.origem.data }}</td>
+            </tr>
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Situação</th>
+                <td class="lista__tabela">{{ form.situacao.data }}</td>
+            </tr>
+    
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">De qual igreja?</th>
+                <td class="lista__tabela">{{ form.observacao.data }}</td>
+            </tr>
+        </table>
+    </div>
+    
     <button class="btn no-print" id="btnPdf">Salvar</button>
 </section>
 {% endblock %}

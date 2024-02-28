@@ -103,7 +103,7 @@ def cadastrado():
     
 @app.route('/lista-de-membros')
 def lista_de_membros():
-    lista = Cadastro.query.order_by(Cadastro.cpf)
+    lista = Cadastro.query.order_by(Cadastro.id)
     return render_template('listar_membros.html', membros=lista, titulo='SIGM - LISTA')
 
 @app.route('/deletar/<int:id>')
@@ -210,6 +210,37 @@ def consultar_membro():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect(url_for('login', proxima=url_for('formulario_de_cadastro')))
     form = FormularioCadastro()
+    form.nome.data = 'Efetue a busca com CPF'
+    form.rg.data = 'Efetue a busca com CPF'
+    form.cpf.data = 'Efetue a busca com CPF'
+    form.orgao_expedidor.data = 'Efetue a busca com CPF'
+    form.sexo.data = 'Efetue a busca com CPF'
+    form.pai.data = 'Efetue a busca com CPF'
+    form.mae.data = 'Efetue a busca com CPF'
+    form.naturalidade.data = 'Efetue a busca com CPF'
+    form.ufIdentidade.data = 'Efetue a busca com CPF'
+    form.pais.data = 'Efetue a busca com CPF'
+    form.cep.data = 'Efetue a busca com CPF'
+    form.logradouro.data = 'Efetue a busca com CPF'
+    form.numero.data = 'Efetue a busca com CPF'
+    form.complemento.data = 'Efetue a busca com CPF'
+    form.bairro.data = 'Efetue a busca com CPF'
+    form.cidade.data = 'Efetue a busca com CPF'
+    form.ufEndereco.data = 'Efetue a busca com CPF'
+    form.telefone.data = 'Efetue a busca com CPF'
+    form.dataNascimento.data = 'Efetue a busca com CPF'
+    form.estadoCivil.data = 'Efetue a busca com CPF'
+    form.nomeConjuge.data = 'Efetue a busca com CPF'
+    form.profissao.data = 'Efetue a busca com CPF'
+    form.escolaridade.data = 'Efetue a busca com CPF'
+    form.dataDeBatismo.data = 'Efetue a busca com CPF'
+    form.batizado.data = 'Efetue a busca com CPF'
+    form.entradaRol.data = 'Efetue a busca com CPF'
+    form.congregacao.data = 'Efetue a busca com CPF'
+    form.funcao.data = 'Efetue a busca com CPF'
+    form.origem.data = 'Efetue a busca com CPF'
+    form.situacao.data = 'Efetue a busca com CPF'
+    form.observacao.data = 'Efetue a busca com CPF'
     return render_template('consultar_membro.html', form=form, titulo='SIGM - CONSULTA')
 
 @app.route("/receber_dados", methods=['POST',])
@@ -257,9 +288,13 @@ def receber_dados():
         form.escolaridade.data = membro.escolaridade
         if membro.data_batismo:
             form.dataDeBatismo.data = membro.data_batismo.strftime('%d/%m/%Y')
+        elif membro.data_batismo == None:
+            form.dataDeBatismo = ''
         form.batizado.data = membro.batizado_esp_santo
         if membro.entrada_rol_membros:
             form.entradaRol.data = membro.entrada_rol_membros.strftime('%d/%m/%Y')
+        elif membro.entrada_rol_membros == None:
+            form.entradaRol.data = ''
         form.congregacao.data = membro.congregacao
         form.funcao.data = membro.funcao
         form.origem.data = membro.origem

@@ -1,9 +1,7 @@
 @use '../variaveis/variaveis.scss';
 
 .conteudo {
-   background-image: url(/static/img/5134341.jpg);
-    
-    /* background-repeat: ; */
+    background-image: url(/static/img/5134341.jpg);
     background-size: cover;
     background-attachment: fixed;
     display: flex;

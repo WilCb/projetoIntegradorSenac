@@ -1,35 +1,134 @@
 @use '../variaveis/variaveis.scss' as v;
 
-.btn-buscar{
+.titulo__form {
+    text-shadow: 2px 4px 5px rgba(103, 103, 103, 0.57);
+}
+
+.img-tabela {
+    width: 32px;
+    margin-left: 10px;
+}
+
+.btn-buscar {
     height: 26px;
     border: 1px solid;
     border-left: none;
     border-radius: 0px 168px 168px 0px;
--webkit-border-radius: 0px 168px 168px 0px;
--moz-border-radius: 0px 168px 168px 0px;
+    -webkit-border-radius: 0px 168px 168px 0px;
+    -moz-border-radius: 0px 168px 168px 0px;
 
 }
-.cpf{
+
+.cpf {
     display: flex;
     align-items: center;
 
-    label{
+    label {
         margin-right: 5px;
         font-weight: 600;
         font-size: 22px;
     }
-    
-    .cpf-busca{
+
+    .cpf-busca {
+        outline: none;
+        padding-left: 12px;
+        text-align: center;
         border-radius: 168px 0px 0px 167px;
--webkit-border-radius: 168px 0px 0px 167px;
--moz-border-radius: 168px 0px 0px 167px;
-        height: 22px;
+        -webkit-border-radius: 168px 0px 0px 167px;
+        -moz-border-radius: 168px 0px 0px 167px;
+        height: 27px;
         border: 1px solid;
         border-right: none;
-    
+
     }
-    
+
 }
+
+.dashboard {
+
+    display: flex;
+    justify-content: center;
+    margin: 120px 0 0 0;
+    gap: 32px;
+
+    .dashboard__total__membros {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        background-color: #FFFFFF;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 2px 3px 18px 4px #6c6a6a;
+
+        h1 {
+            margin: auto;
+            font-size: 32px;
+        }
+
+        p {
+            color: red;
+            font-size: 28px;
+            font-weight: 800;
+
+        }
+    }
+
+    .dashboard__tabela {
+        @extend .dashboard__total__membros;
+        justify-content: flex-start;
+
+        .titulo {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .dashboard__container__tabela {
+
+            border-collapse: collapse;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: space-around;
+
+            text-align: center;
+
+
+
+            .titulo__tabela {
+                border: 1px solid;
+                text-align: center;
+            }
+
+
+            .conteudo__tabela-lista {
+                .lista__tabela {
+                    font-size: 12px;
+                    border: 1px solid;
+                    padding: 2px;
+                }
+
+            }
+        }
+    }
+}
+
+.btn-buscar {
+    height: 31px;
+    border: 1px solid black;
+    color: #ffffff;
+    background-color: #3652AD;
+
+
+}
+
+.titulo_pagina {
+    text-shadow: 2px 4px 5px rgba(103, 103, 103, 0.57);
+    text-align: center;
+    margin-top: 40px;
+}
+
 .geral__tabela {
     align-items: center;
     display: flex;
@@ -39,43 +138,52 @@
     padding: 40px 0;
 
     .container__tabela {
-        background-color: #FFFFFF;
-        border-collapse: collapse;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        justify-content: space-around;
+        border-radius: 10px;
+        box-shadow: 2px 3px 18px 4px #6c6a6a;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin: 0 20px;
         padding: 40px 20px;
         text-align: center;
 
-        .titulos__tabela {
-            .titulo__tabela {
-                border: 1px solid;
-            }
-        }
+        table {
+            border-collapse: collapse;
 
-        .conteudo__tabela-lista {
-            .lista__tabela {
-                font-size: 12px;
-                border: 1px solid;
-                padding: 2px;
+            .titulo__secao {
+                font-size: 1.5rem;
             }
-
-        }
+            .titulos__tabela {
+                .titulo__tabela {
+                    border: 1px solid;
+                    font-weight: 500;
+                    width: 200px;
+                }
+            }
+    
+            .conteudo__tabela-lista {
+                .lista__tabela {
+                    font-size: 12px;
+                    border: 1px solid;
+                    padding: 5px 20px 7px 20px;
+                }
+    
+            }
+        }  
     }
 
     .btn {
 
 
         margin: 20px 0;
-        background-color: v.$cor-secundaria;
+        background-color: v.$bd-btn;
         border: none;
         border-radius: 20px;
         cursor: pointer;
         padding: 10px 40px;
+        color: #ffffff;
+        background-color: #3752AD;
 
         &:hover {
-            background-color: v.$cor-primaria;
+            background-color: v.$bd-btn-hover;
         }
     }
 }

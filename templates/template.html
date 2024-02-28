@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ titulo }}</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../static/js/salvar_pdf.js" defer></script>
     <link rel="shortcut icon" href="../static/img/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="../static/scss/style.css">
@@ -21,14 +23,29 @@
         <div class="container__nav no-print">
             <img class="logo" src="../static/img/logo.png" alt="">
             <nav>
-                <a href="{{ url_for('index') }}"><img src="../static/img/house-fill.svg"
-                        alt="Imagem de uma casa na cor branca">Início</a>
-                <a href="{{ url_for('formulario_de_cadastro') }}"><img src="../static/img/person-fill-add.svg"
-                        alt="imagem de um boneco com um sinal de mais">Cadastrar</a>
-                <a href="{{ url_for('lista_de_membros') }}"><img src="../static/img/listar.svg"
-                        alt="Imagem de uma prancheta">Lista</a>
-                <a href="{{ url_for('consultar_membro') }}"><img src="../static/img/bx-search-alt.svg" alt="">Membro</a>
-                <a href="{{url_for('logout')}}"><img src="../static/img/saida.svg" alt="">Sair</a>
+                <a href="{{ url_for('index') }}">
+                    <img src="../static/img/house-fill.svg" alt="Imagem de uma casa na cor branca">
+                    <span>Início</span>
+                </a>
+                <a href="{{ url_for('formulario_de_cadastro') }}">
+                    <img src="../static/img/person-fill-add.svg"
+                        alt="imagem de um boneco com um sinal de mais">
+                        <span>Cadastrar</span>
+                </a>
+                <a href="{{ url_for('lista_de_membros') }}">
+                    <img src="../static/img/listar.svg"
+                        alt="Imagem de uma prancheta">
+                    <span>Listar</span>
+                </a>
+                <a href="{{ url_for('consultar_membro') }}">
+                    <img src="../static/img/bx-search-alt.svg"
+                        alt="">
+                        <span>Consultar</span>
+                </a>
+                <a href="{{url_for('logout')}}">
+                    <img src="../static/img/saida.svg" alt="">
+                    <span>Sair</span>
+                </a>
             </nav>
         </div>
 

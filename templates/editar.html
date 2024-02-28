@@ -1,7 +1,7 @@
 {% extends 'template.html' %}
 {% block conteudo %}
 <section class="formulario" id="formulario">
-    <h2 class="titulo__form">Formulário de cadastro</h2>
+    <h2 class="titulo__form">Editando informações</h2>
     <form action="{{ url_for('atualizar_membro') }}" method="post" class="container__form">
         <input type="hidden" name="id" value="{{ id }}">
         <span class="titulo__categoria">Identificação</span>
@@ -15,7 +15,7 @@
                 {{ form.rg.label() }}
                 {{ form.rg(class="input__padrao", id="rg") }}
             </div>
-            <div class="cpf">
+            <div class="cpf-form">
                 {{ form.cpf.label() }}
                 {{ form.cpf(class="input__padrao", oninput="criaMascara('cpf')") }}
             </div>
